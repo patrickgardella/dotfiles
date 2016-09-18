@@ -19,3 +19,8 @@ colorscheme solarized
 
 let vim_markdown_preview_hotkey='<C-m>'
 source .simplenoterc
+
+augroup markdown
+     au!
+     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+augroup END

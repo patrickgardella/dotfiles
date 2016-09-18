@@ -18,3 +18,4 @@ set background=light
 colorscheme solarized
 
 let vim_markdown_preview_hotkey='<C-m>'
+source .simplenoterc

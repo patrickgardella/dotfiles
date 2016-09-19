@@ -14,11 +14,11 @@ syntax on
 "set autoindent
 filetype plugin indent on
 
-set background=light
+set background=dark
 colorscheme solarized
 
 let vim_markdown_preview_hotkey='<C-m>'
-source .simplenoterc
+source ~/.simplenoterc
 
 augroup markdown
      au!

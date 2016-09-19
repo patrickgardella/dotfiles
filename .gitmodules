@@ -73,3 +73,6 @@
 [submodule ".vim/bundle/simplenote.vim"]
 	path = .vim/bundle/simplenote.vim
 	url = https://github.com/mrtazz/simplenote.vim.git
+[submodule ".vim/bundle/vim-lilypond"]
+	path = .vim/bundle/vim-lilypond
+	url = https://github.com/matze/vim-lilypond.git

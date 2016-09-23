@@ -1,7 +1,5 @@
 # First, ignore everything
 *
-# Now, whitelist anything that's a directory
-!*/
 # And any files you want
 !.vim/**
 !.gitignore

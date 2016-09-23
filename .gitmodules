@@ -19,9 +19,6 @@
 [submodule ".vim/bundle/vim-preview"]
 	path = .vim/bundle/vim-preview
 	url = git://github.com/greyblake/vim-preview.git
-[submodule ".vim/bundle/vim-rdoc"]
-	path = .vim/bundle/vim-rdoc
-	url = git://github.com/hallison/vim-rdoc.git
 [submodule ".vim/bundle/snipmate.vim"]
 	path = .vim/bundle/snipmate.vim
 	url = git://github.com/msanders/snipmate.vim.git
@@ -31,18 +28,6 @@
 [submodule ".vim/bundle/textile.vim"]
 	path = .vim/bundle/textile.vim
 	url = git://github.com/timcharper/textile.vim.git
-[submodule ".vim/bundle/vim-fugitive"]
-	path = .vim/bundle/vim-fugitive
-	url = git://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/vim-git"]
-	path = .vim/bundle/vim-git
-	url = git://github.com/tpope/vim-git.git
-[submodule ".vim/bundle/vim-haml"]
-	path = .vim/bundle/vim-haml
-	url = git://github.com/tpope/vim-haml.git
-[submodule ".vim/bundle/vim-rails"]
-	path = .vim/bundle/vim-rails
-	url = git://github.com/tpope/vim-rails.git
 [submodule ".vim/bundle/vim-repeat"]
 	path = .vim/bundle/vim-repeat
 	url = git://github.com/tpope/vim-repeat.git
@@ -52,9 +37,6 @@
 [submodule ".vim/bundle/vim-colors-solarized"]
 	path = .vim/bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule ".vim/bundle/vim-shoulda"]
-	path = .vim/bundle/vim-shoulda
-	url = git://github.com/tsaleh/vim-shoulda.git
 [submodule ".vim/bundle/Gist.vim"]
 	path = .vim/bundle/Gist.vim
 	url = git://github.com/vim-scripts/Gist.vim.git

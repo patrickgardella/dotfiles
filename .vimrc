@@ -12,8 +12,10 @@ syntax on
 " set textwidth=80
 " " Automatically indent
 "set autoindent
+
 filetype plugin indent on
 
+let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
 

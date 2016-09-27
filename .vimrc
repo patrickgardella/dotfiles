@@ -7,6 +7,7 @@ call pathogen#helptags()
 set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show unicode glyphs
+set shiftwidth=4   " Allow for indents to be four columns
 
 " Syntax highlighting based on file extension
 syntax on

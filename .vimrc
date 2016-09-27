@@ -15,11 +15,13 @@ syntax on
 " set textwidth=80
 " Automatically indent
 "set autoindent
+
 filetype plugin indent on
 
 "Have help open in a split to the right, rather than vertically
 autocmd FileType help wincmd L
 
+let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
 

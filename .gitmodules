@@ -19,14 +19,14 @@
 [submodule ".vim/bundle/vim-preview"]
 	path = .vim/bundle/vim-preview
 	url = git://github.com/greyblake/vim-preview.git
-[submodule ".vim/bundle/snipmate"]
-	path = .vim/bundle/snipmate
+[submodule ".vim/bundle/snipmate.vim"]
+	path = .vim/bundle/snipmate.vim
 	url = git://github.com/msanders/snipmate.vim.git
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule ".vim/bundle/textile"]
-	path = .vim/bundle/textile
+[submodule ".vim/bundle/textile.vim"]
+	path = .vim/bundle/textile.vim
 	url = git://github.com/timcharper/textile.vim.git
 [submodule ".vim/bundle/vim-repeat"]
 	path = .vim/bundle/vim-repeat
@@ -37,8 +37,8 @@
 [submodule ".vim/bundle/vim-colors-solarized"]
 	path = .vim/bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule ".vim/bundle/Gist"]
-	path = .vim/bundle/Gist
+[submodule ".vim/bundle/Gist.vim"]
+	path = .vim/bundle/Gist.vim
 	url = git://github.com/vim-scripts/Gist.vim.git
 [submodule ".vim/bundle/vim-lilypond"]
 	path = .vim/bundle/vim-lilypond
@@ -55,6 +55,6 @@
 [submodule ".vim/bundle/vimwiki"]
 	path = .vim/bundle/vimwiki
 	url = https://github.com/vimwiki/vimwiki.git
-[submodule ".vim/bundle/simplenote"]
-        path = .vim/bundle/simplenote
+[submodule ".vim/bundle/simplenote.vim"]
+        path = .vim/bundle/simplenote.vim
         url = https://github.com/mrtazz/simplenote.vim.git

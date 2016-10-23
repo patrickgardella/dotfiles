@@ -22,6 +22,7 @@
 [submodule ".vim/bundle/snipmate.vim"]
 	path = .vim/bundle/snipmate.vim
 	url = git://github.com/msanders/snipmate.vim.git
+	ignore = dirty
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
@@ -40,6 +41,7 @@
 [submodule ".vim/bundle/Gist.vim"]
 	path = .vim/bundle/Gist.vim
 	url = git://github.com/vim-scripts/Gist.vim.git
+        ignore = dirty
 [submodule ".vim/bundle/vim-lilypond"]
 	path = .vim/bundle/vim-lilypond
 	url = https://github.com/matze/vim-lilypond.git
@@ -58,3 +60,4 @@
 [submodule ".vim/bundle/simplenote.vim"]
         path = .vim/bundle/simplenote.vim
         url = https://github.com/mrtazz/simplenote.vim.git
+        ignore = dirty

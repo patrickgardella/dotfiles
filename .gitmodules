@@ -58,3 +58,6 @@
 [submodule ".vim/bundle/simplenote"]
         path = .vim/bundle/simplenote
         url = https://github.com/mrtazz/simplenote.vim.git
+[submodule ".vim/bundle/.vim/bundle/simplenote.vim"]
+	path = .vim/bundle/.vim/bundle/simplenote.vim
+	url = https://github.com/mrtazz/simplenote.vim.git

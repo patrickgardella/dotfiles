@@ -1,4 +1,5 @@
-# linEnvSetup
+# Patrick's dotfiles
+
 Configure my local environment on a new system
 
 ```
@@ -8,3 +9,6 @@ git config --global user.email you@example.com
 git config --global core.editor "vim"
 git config --global push.default simple
 ```
+## Thanks to:
+
+* https://github.com/mathiasbynens/dotfiles

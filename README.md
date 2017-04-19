@@ -9,6 +9,12 @@ git config --global user.email you@example.com
 git config --global core.editor "vim"
 git config --global push.default simple
 ```
-## Thanks to:
+
+## To-Do:
+
+Solarized for xterm & iterm
+
+### Thanks to:
 
 * https://github.com/mathiasbynens/dotfiles
+* https://github.com/holman/dotfiles

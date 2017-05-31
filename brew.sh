@@ -77,6 +77,8 @@ brew cask install slack
 brew cask install skype
 brew cask install virtualbox
 
+# Finally remote casks
+brew cask install caskroom/versions/microsoft-remote-desktop-beta
 
 # Remove outdated versions from the cellar.
 brew cleanup

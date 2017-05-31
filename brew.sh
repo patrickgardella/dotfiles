@@ -66,6 +66,7 @@ brew cask install unetbootin
 brew cask install manageengine-mibbrowser
 brew cask install arduino
 brew cask install dropbox
+brew cask install 1password
 brew cask install evernote
 brew cask install google-chrome
 brew cask install iterm2

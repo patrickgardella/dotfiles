@@ -112,5 +112,8 @@ function exit() {
 
 source ~/.bashrc-local
 
+#Set GIT Editor once and forall:
+export GIT_EDITOR=vim
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"

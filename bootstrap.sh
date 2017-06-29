@@ -31,3 +31,6 @@ else
 	fi;
 fi;
 unset doIt;
+
+# Handle some basic Git configuration
+git config --global push.default simple

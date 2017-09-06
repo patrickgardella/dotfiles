@@ -48,7 +48,7 @@ brew install git
 brew install gpg
 brew install lynx
 brew install mosh
-brew install osquery
+#brew install osquery
 brew install ssh-copy-id
 brew install tmux
 brew install youtube-dl
@@ -59,7 +59,7 @@ brew cask install charles
 brew cask install dropbox
 brew cask install evernote
 brew cask install firefox
-brew cask install gimp
+#brew cask install gimp
 brew cask install google-chrome
 brew cask install handbrake
 brew cask install iterm2
@@ -67,17 +67,17 @@ brew cask install istumbler
 brew cask install java
 brew cask install kindle
 brew cask install lilypond
-brew cask install macvim
-brew cask install manageengine-mibbrowser
+#brew cask install macvim
+#brew cask install manageengine-mibbrowser
 brew cask install mountain-duck
-brew cask install odrive
+#brew cask install odrive
 brew cask install onyx
 brew cask install skype
 brew cask install slack
 brew cask install steam
 brew cask install tiddlywiki
 brew cask install unetbootin
-brew cask install wireshark
+#brew cask install wireshark
 brew cask install virtualbox
 
 # Linkapps links apps into the Applications folder

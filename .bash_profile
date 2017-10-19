@@ -1,3 +1,5 @@
+unamestr=`uname`
+
 if [ -f ~/.bashrc ]; then
 	   source ~/.bashrc
 fi
@@ -12,6 +14,6 @@ test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_i
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
+if [ "$unamestr" == 'Darwin' ] && [ -f $(brew --prefix)/etc/bash_completion ]; then
 . $(brew --prefix)/etc/bash_completion
 fi

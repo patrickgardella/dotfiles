@@ -34,14 +34,14 @@ brew install wget --with-iri
 # Install more recent versions of some macOS tools.
 brew install vim --with-override-system-vi
 brew install vim-gui
-brew install homebrew/dupes/grep
-brew install homebrew/dupes/openssh
+brew install grep --with-default-names
+brew install /openssh
 
 # Install some CTF tools; see https://github.com/ctfs/write-ups.
 brew install nmap
 
 # Install other useful binaries.
-brew install dark-mode
+#brew install dark-mode
 brew install geoip
 brew install git
 #brew install git-lfs

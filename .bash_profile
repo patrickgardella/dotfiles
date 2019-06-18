@@ -17,3 +17,6 @@ test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_i
 if [ "$unamestr" == 'Darwin' ] && [ -f $(brew --prefix)/etc/bash_completion ]; then
 . $(brew --prefix)/etc/bash_completion
 fi
+
+# Add support for node CLI tools
+export PATH=$PATH:/opt/nodejs/bin

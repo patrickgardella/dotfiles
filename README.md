@@ -8,6 +8,9 @@ git config --global user.name "Your Name"
 git config --global user.email you@example.com
 ```
 
+# Updates to submodules
+`git submodule update --remote`
+
 ## To-Do:
 
 Solarized for xterm & iterm

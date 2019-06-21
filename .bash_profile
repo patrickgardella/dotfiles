@@ -11,12 +11,22 @@ test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_i
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # Use bash-completion, if available
-[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
-    . /usr/share/bash-completion/bash_completion
-
-if [ "$unamestr" == 'Darwin' ] && [ -f $(brew --prefix)/etc/bash_completion ]; then
-. $(brew --prefix)/etc/bash_completion
+HOMEBREW_PREFIX=$(brew --prefix)
+if type brew &>/dev/null; then
+  for COMPLETION in "$HOMEBREW_PREFIX"/etc/bash_completion.d/*
+  do
+    [[ -f $COMPLETION ]] && source "$COMPLETION"
+  done
+  if [[ -f ${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh ]];
+  then
+    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  fi
 fi
+
+# Make command line pretty
+export GIT_PS1_SHOWDIRTYSTATE=yes
+export GIT_PS1_SHOWCOLORHINTS=true
+export PS1='\[\033[00;32m\]\u@\h \[\033[00;34m\]\W\[\033[0;31m\]$(__git_ps1) \[\033[01;35m\]$\[\033[0;39m\]'
 
 # Add support for node CLI tools
 export PATH=$PATH:/opt/nodejs/bin

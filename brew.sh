@@ -19,7 +19,6 @@ brew install findutils
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before
 # running `chsh`.
 brew install bash
-brew tap homebrew/versions
 brew install bash-completion2
 
 # Switch to using brew-installed bash as default shell
@@ -28,13 +27,12 @@ if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
   chsh -s /usr/local/bin/bash;
 fi;
 
-# Install `wget` with IRI support.
-brew install wget --with-iri
+# Install `wget`
+brew install wget
 
 # Install more recent versions of some macOS tools.
-brew install vim --with-override-system-vi
+brew install vim 
 brew install vim-gui
-brew install grep --with-default-names
 brew install /openssh
 
 # Install some CTF tools; see https://github.com/ctfs/write-ups.
@@ -51,7 +49,6 @@ brew install mosh
 #brew install osquery
 brew install ssh-copy-id
 brew install tmux
-brew install youtube-dl
 
 brew cask install 1password
 brew cask install arduino
@@ -81,8 +78,8 @@ brew cask install unetbootin
 brew cask install virtualbox
 
 # Linkapps links apps into the Applications folder
-brew linkapps wireshark
-brew linkapps vim
+ln -Fs `find /usr/local -name "MacVim.app"` /Applications/MacVim.app
+ln -Fs `find /usr/local -name "Wireshark.app"` /Applications/Wireshark.app
 
 # Finally remote casks
 brew cask install caskroom/versions/microsoft-remote-desktop-beta

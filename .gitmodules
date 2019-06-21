@@ -6,7 +6,8 @@
 	url = git://github.com/godlygeek/tabular.git
 [submodule ".vim/bundle/supertab"]
 	path = .vim/bundle/supertab
-	url = git://github.com/ervandew/supertab.git
+	url = https://github.com/ervandew/supertab.git
+	branch = master
 [submodule ".vim/bundle/vim-tmux"]
 	path = .vim/bundle/vim-tmux
 	url = git://github.com/tmux-plugins/vim-tmux.git

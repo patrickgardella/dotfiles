@@ -1,9 +1,11 @@
 [submodule ".vim/bundle/vim-javascript"]
 	path = .vim/bundle/vim-javascript
 	url = git://github.com/pangloss/vim-javascript.git
+	branch = master
 [submodule ".vim/bundle/tabular"]
 	path = .vim/bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
+	branch = master
 [submodule ".vim/bundle/supertab"]
 	path = .vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
@@ -11,34 +13,43 @@
 [submodule ".vim/bundle/vim-tmux"]
 	path = .vim/bundle/vim-tmux
 	url = git://github.com/tmux-plugins/vim-tmux.git
+	branch = master
 [submodule ".vim/bundle/vim-flavored-markdown"]
 	path = .vim/bundle/vim-flavored-markdown
 	url = git://github.com/jtratner/vim-flavored-markdown.git
+	branch = master
 [submodule ".vim/bundle/vim-markdown"]
 	path = .vim/bundle/vim-markdown
 	url = git://github.com/plasticboy/vim-markdown.git
+	branch = master
 [submodule ".vim/bundle/vim-preview"]
 	path = .vim/bundle/vim-preview
 	url = git://github.com/greyblake/vim-preview.git
+	branch = master
 [submodule ".vim/bundle/snipmate.vim"]
 	path = .vim/bundle/snipmate.vim
 	url = git://github.com/msanders/snipmate.vim.git
 	ignore = dirty
+	branch = master
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
 [submodule ".vim/bundle/textile.vim"]
 	path = .vim/bundle/textile.vim
 	url = git://github.com/timcharper/textile.vim.git
+	branch = master
 [submodule ".vim/bundle/vim-repeat"]
 	path = .vim/bundle/vim-repeat
 	url = git://github.com/tpope/vim-repeat.git
+	branch = master
 [submodule ".vim/bundle/vim-surround"]
 	path = .vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
+	branch = master
 [submodule ".vim/bundle/vim-colors-solarized"]
 	path = .vim/bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+	branch = master
 [submodule ".vim/bundle/Gist.vim"]
 	path = .vim/bundle/Gist.vim
 	url = git://github.com/vim-scripts/Gist.vim.git
@@ -46,12 +57,15 @@
 [submodule ".vim/bundle/vim-lilypond"]
 	path = .vim/bundle/vim-lilypond
 	url = https://github.com/matze/vim-lilypond.git
+	branch = master
 [submodule ".vim/bundle/vim-airline"]
 	path = .vim/bundle/vim-airline
 	url = git://github.com/vim-airline/vim-airline.git
+	branch = master
 [submodule ".vim/bundle/vim-airline-themes"]
 	path = .vim/bundle/vim-airline-themes
 	url = git://github.com/vim-airline/vim-airline-themes.git
+	branch = master
 [submodule ".vim/bundle/nerdcommenter"]
 	path = .vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter

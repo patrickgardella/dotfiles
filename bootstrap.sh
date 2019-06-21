@@ -47,6 +47,3 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
     /bin/bash brew.sh
 fi
 
-# Install pre-requisites for vim-preview
-gem install redcarpet
-gem install github-markup

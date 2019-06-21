@@ -76,3 +76,7 @@
         path = .vim/bundle/simplenote.vim
         url = https://github.com/mrtazz/simplenote.vim.git
         ignore = dirty
+[submodule ".vim/bundle/vim-grip"]
+	path = .vim/bundle/vim-grip
+	url = https://github.com/PratikBhusal/vim-grip
+	branch = master

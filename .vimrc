@@ -21,9 +21,12 @@ filetype plugin indent on
 "Have help open in a split to the right, rather than vertically
 autocmd FileType help wincmd L
 
-let g:solarized_termcolors=256
+"Configure theme
+"let g:solarized_termcolors=256
+"colorscheme solarized
 set background=dark
-colorscheme solarized
+set termguicolors
+colorscheme solarized8
 
 let vim_markdown_preview_hotkey='<C-m>'
 
@@ -35,6 +38,7 @@ augroup markdown
 augroup END
 autocmd BufNewFile,BufRead \*.{md,mdwn,mkd,mkdn,mark\*} set filetype=markdown
 
+" Configure NerdCommenter
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 " " Use compact syntax for prettified multi-line comments

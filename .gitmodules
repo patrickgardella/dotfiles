@@ -46,10 +46,6 @@
 	path = .vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
 	branch = master
-[submodule ".vim/bundle/vim-colors-solarized"]
-	path = .vim/bundle/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
-	branch = master
 [submodule ".vim/bundle/Gist.vim"]
 	path = .vim/bundle/Gist.vim
 	url = git://github.com/vim-scripts/Gist.vim.git
@@ -80,3 +76,6 @@
 	path = .vim/bundle/vim-grip
 	url = https://github.com/PratikBhusal/vim-grip
 	branch = master
+[submodule ".vim/bundle/vim-solarized8"]
+	path = .vim/bundle/vim-solarized8
+	url = https://github.com/lifepillar/vim-solarized8.git

@@ -95,13 +95,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
-
 function exit() {
     if [[ -z $TMUX ]]; then
         builtin exit
@@ -115,5 +108,15 @@ source ~/.bashrc-local
 #Set GIT Editor once and forall:
 export GIT_EDITOR=vim
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Add support for node CLI tools
+export PATH=$PATH:/opt/nodejs/bin
+export PATH="/usr/local/sbin:$PATH"
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+complete -C /usr/local/bin/terraform terraform

@@ -49,7 +49,7 @@ brew cask install virtualbox
 ln -Fs `find /usr/local -name "MacVim.app"` /Applications/MacVim.app
 
 # Finally remote casks
-brew cask install caskroom/versions/microsoft-remote-desktop-beta
+brew cask install homebrew/cask-versions/microsoft-remote-desktop-beta
 
 # Remove outdated versions from the cellar.
 brew cleanup

@@ -21,7 +21,6 @@ brew install wget
 # Install more recent versions of some macOS tools.
 brew install vim 
 brew install vim-gui
-brew install /openssh
 
 # Install some CTF tools; see https://github.com/ctfs/write-ups.
 brew install nmap

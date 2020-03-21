@@ -34,6 +34,7 @@ unset doIt;
 
 # Add local files
 touch ~/.bashrc-local
+mkdir -p ~/.config
 
 # Handle some basic Git configuration
 git config --global push.default simple

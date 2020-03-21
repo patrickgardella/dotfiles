@@ -8,4 +8,5 @@ sudo apt-get -y install \
     mosh \
     tmux \
     vim \
-    whois
+    whois \
+    fonts-firacode

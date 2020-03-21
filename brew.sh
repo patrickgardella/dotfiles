@@ -19,8 +19,7 @@ brew install findutils
 brew install wget
 
 # Install more recent versions of some macOS tools.
-brew install vim 
-brew install vim-gui
+brew install vim --enable-gui --with-override-system-vi 
 
 # Install some CTF tools; see https://github.com/ctfs/write-ups.
 brew install nmap
@@ -41,9 +40,13 @@ brew cask install java
 brew cask install onyx
 brew cask install skype
 brew cask install slack
-brew cask install steam
-brew cask install unetbootin
 brew cask install virtualbox
+
+brew tap homebrew/cask-fonts
+brew cask install font-fira-code
+
+brew install starship
+brew install getantibody/tap/antibody
 
 # Linkapps links apps into the Applications folder
 ln -Fs `find /usr/local -name "MacVim.app"` /Applications/MacVim.app

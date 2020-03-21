@@ -11,8 +11,8 @@ test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_i
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # Use bash-completion, if available
-HOMEBREW_PREFIX=$(brew --prefix)
 if type brew &>/dev/null; then
+  HOMEBREW_PREFIX=$(brew --prefix)
   for COMPLETION in "$HOMEBREW_PREFIX"/etc/bash_completion.d/*
   do
     [[ -f $COMPLETION ]] && source "$COMPLETION"

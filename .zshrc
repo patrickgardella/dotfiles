@@ -13,8 +13,10 @@ setopt auto_menu # automatically use menu completion
 setopt always_to_end # move cursor to end if word had one match
 
 # Configure Antibody
-source <(antibody init)
-antibody bundle < ~/.zsh_plugins
+#source <(antibody init)
+#antibody bundle < ~/.zsh_plugins
+alias antibodybuild="antibody bundle < ~/.zsh_plugins > ~/.zsh_plugins"
+source ~/.zsh_plugins.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 

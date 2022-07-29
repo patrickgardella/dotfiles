@@ -10,10 +10,6 @@
 	path = .vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
 	branch = master
-[submodule ".vim/bundle/vim-tmux"]
-	path = .vim/bundle/vim-tmux
-	url = git://github.com/tmux-plugins/vim-tmux.git
-	branch = master
 [submodule ".vim/bundle/vim-flavored-markdown"]
 	path = .vim/bundle/vim-flavored-markdown
 	url = git://github.com/jtratner/vim-flavored-markdown.git
@@ -42,10 +38,6 @@
 	path = .vim/bundle/vim-repeat
 	url = git://github.com/tpope/vim-repeat.git
 	branch = master
-[submodule ".vim/bundle/vim-surround"]
-	path = .vim/bundle/vim-surround
-	url = git://github.com/tpope/vim-surround.git
-	branch = master
 [submodule ".vim/bundle/Gist.vim"]
 	path = .vim/bundle/Gist.vim
 	url = git://github.com/vim-scripts/Gist.vim.git
@@ -53,14 +45,6 @@
 [submodule ".vim/bundle/vim-lilypond"]
 	path = .vim/bundle/vim-lilypond
 	url = https://github.com/matze/vim-lilypond.git
-	branch = master
-[submodule ".vim/bundle/vim-airline"]
-	path = .vim/bundle/vim-airline
-	url = git://github.com/vim-airline/vim-airline.git
-	branch = master
-[submodule ".vim/bundle/vim-airline-themes"]
-	path = .vim/bundle/vim-airline-themes
-	url = git://github.com/vim-airline/vim-airline-themes.git
 	branch = master
 [submodule ".vim/bundle/nerdcommenter"]
 	path = .vim/bundle/nerdcommenter
@@ -76,9 +60,6 @@
 	path = .vim/bundle/vim-grip
 	url = https://github.com/PratikBhusal/vim-grip
 	branch = master
-[submodule ".vim/bundle/vim-solarized8"]
-	path = .vim/bundle/vim-solarized8
-	url = https://github.com/lifepillar/vim-solarized8.git
 [submodule ".vim/bundle/tabnine-vim"]
 	path = .vim/bundle/tabnine-vim
 	url = https://github.com/zxqfl/tabnine-vim

@@ -8,8 +8,32 @@ git config --global user.name "Your Name"
 git config --global user.email you@example.com
 ```
 
-# Updates to submodules
-`git submodule update --remote`
+# VIM packages
+
+## Adding a package
+
+```
+cd ~/dotfiles
+git submodule init
+git submodule add https://github.com/vim-airline/vim-airline.git .vim/pack/plugins/start/vim-airline
+git add .gitmodules .vim/pack/plugins/start/vim-airline
+git commit
+```
+
+## Update a package
+
+```
+git submodule update --remote --merge
+git commit
+```
+
+## Remove a package
+```
+git submodule deinit .vim/pack/plugins/start/vim-airline
+git rm .vim/pack/plugins/start/vim-airline
+rm -Rf .git/modules/.vim/pack/plugins/start/vim-airline
+git commit
+```
 
 ## To-Do:
 

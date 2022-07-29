@@ -1,8 +1,5 @@
 let mapleader = "\\"
 
-call pathogen#infect()
-call pathogen#helptags()
-
 " Turn off vi compatibility settings like limited undo
 set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline

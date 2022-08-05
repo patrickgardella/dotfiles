@@ -33,14 +33,14 @@ brew install ssh-copy-id
 brew install tmux
 
 brew cask install 1password
-brew cask install charles
+#brew cask install charles
 brew cask install google-chrome
 brew cask install iterm2
 brew cask install java
 brew cask install onyx
-brew cask install skype
-brew cask install slack
-brew cask install virtualbox
+#brew cask install skype
+#brew cask install slack
+#brew cask install virtualbox
 
 brew tap homebrew/cask-fonts
 brew cask install font-fira-code
@@ -52,7 +52,7 @@ brew install getantibody/tap/antibody
 ln -Fs `find /usr/local -name "MacVim.app"` /Applications/MacVim.app
 
 # Finally remote casks
-brew cask install homebrew/cask-versions/microsoft-remote-desktop-beta
+#brew cask install homebrew/cask-versions/microsoft-remote-desktop-beta
 
 # Remove outdated versions from the cellar.
 brew cleanup

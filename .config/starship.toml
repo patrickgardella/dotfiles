@@ -13,12 +13,12 @@ style = "bold yellow"
 
 # when capacity is over 30%, the battery indicator will not be displayed
 
-[character]
-use_symbol_for_status = true  # Show "✖" when the command faild
+#[character]
+#use_symbol_for_status = true  # Show "✖" when the command faild
 
 [directory]
 truncation_length = 5
-prefix = ""
+#prefix = ""
 
 [git_status]
 disabled = false

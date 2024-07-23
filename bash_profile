@@ -6,9 +6,8 @@ fi
 
 source ~/.profile
 
+## Mac Specific Stuff
 test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # Use bash-completion, if available
 if type brew &>/dev/null; then
@@ -23,10 +22,5 @@ if type brew &>/dev/null; then
   fi
 fi
 
-# Make command line pretty
-export GIT_PS1_SHOWDIRTYSTATE=yes
-export GIT_PS1_SHOWCOLORHINTS=true
-export PS1='\[\033[00;32m\]\u@\h \[\033[00;34m\]\W\[\033[0;31m\]$(__git_ps1) \[\033[01;35m\]$\[\033[0;39m\]'
-
-# Add support for node CLI tools
-export PATH=$PATH:/opt/nodejs/bin
+## Configure Starship
+eval "$(starship init bash)"

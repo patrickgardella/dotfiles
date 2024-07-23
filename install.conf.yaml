@@ -1,0 +1,26 @@
+- defaults:
+    link:
+      relink: false
+
+- clean: ["~"]
+
+- link:
+    ~/.bash_logout: bash_logout
+    ~/.bash_profile: bash_profile
+    ~/.bashrc: bashrc
+    ~/.config/starship.toml: config/starship.toml
+    ~/.config/nvim:
+      path: config/nvim
+      force: false
+    ~/.profile: profile
+    ~/.tmux.conf: tmux.conf
+    ~/.vim/pack:
+      path: .vim/pack
+      force: false
+    ~/.vimrc: vimrc
+    ~/.wgetrc: wgetrc
+    ~/.zshrc: zshrc
+    ~/.zsh_plugins: zsh_plugins
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]

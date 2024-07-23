@@ -3,6 +3,7 @@
 Configure my local environment on a new system
 
 ```
+./install
 ./bootstrap.sh
 git config --global user.name "Your Name"
 git config --global user.email you@example.com
@@ -28,6 +29,7 @@ git commit
 ```
 
 ## Remove a package
+
 ```
 git submodule deinit .vim/pack/plugins/start/vim-airline
 git rm .vim/pack/plugins/start/vim-airline
@@ -41,5 +43,7 @@ Solarized for xterm & iterm
 
 ### Thanks to:
 
-* https://github.com/mathiasbynens/dotfiles
-* https://github.com/holman/dotfiles
+- https://github.com/anishathalye/dotbot
+- https://www.elliotdenolf.com/blog/bootstrap-your-dotfiles-with-dotbot
+- https://github.com/mathiasbynens/dotfiles
+- https://github.com/holman/dotfiles

@@ -7,3 +7,6 @@
 [submodule ".vim/pack/plugins/start/vim-solarized8"]
 	path = .vim/pack/plugins/start/vim-solarized8
 	url = https://github.com/lifepillar/vim-solarized8
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot

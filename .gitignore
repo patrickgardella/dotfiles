@@ -1,3 +1,12 @@
+# vim plugins
+.vim/plug/*
+.vim/.netrwhist
+
+# vim folder
+vim/plugged/**
+vim/session/*
+vim/backup/*
+
 # Compiled Python files
 *.pyc
 
@@ -15,3 +24,39 @@ Thumbs.db
 # Files that might appear on external disks
 .Spotlight-V100
 .Trashes
+.DocumentRevisions-V100
+.fseventsd
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Ctags generated file
+tags
+
+## VIM Generated Files ##
+# swap
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+
+# persistent undo
+*.un~
+
+# session
+Session.vim
+
+# temporary
+.netrwhist
+
+## Visual Studio Code ##
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json

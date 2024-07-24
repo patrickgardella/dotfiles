@@ -60,3 +60,6 @@ Session.vim
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# lock files
+config/nvim/lazy-lock.json

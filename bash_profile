@@ -4,7 +4,7 @@ if [ -f ~/.bashrc ]; then
 	   source ~/.bashrc
 fi
 
-source ~/.profile
+[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
 
 ## Mac Specific Stuff
 test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash

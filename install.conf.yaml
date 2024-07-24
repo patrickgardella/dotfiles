@@ -20,6 +20,7 @@
     ~/.vimrc: vimrc
     ~/.wgetrc: wgetrc
     ~/.zshrc: zshrc
+    ~/.zprofile: zprofile
     ~/.zsh_plugins: zsh_plugins
 
 - shell:

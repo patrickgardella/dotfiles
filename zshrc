@@ -37,3 +37,10 @@ alias brewup='brew update; brew upgrade; brew cask upgrade; brew cleanup'
 # Configure command line prompt
 # . /usr/local/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
 eval "$(starship init zsh)"
+
+# Usage: compresspdf [input file] [output file] [screen*|ebook|printer|prepress]
+compresspdf() {
+  gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/${3:-"screen"} -dCompatibilityLevel=1.4 -sOutputFile="$2" "$1"
+}
+
+eval "$(gh copilot alias -- zsh)"

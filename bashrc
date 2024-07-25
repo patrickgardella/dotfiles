@@ -60,6 +60,12 @@ xterm*|rxvt*)
     ;;
 esac
 
+# But will be overwritten by Starship
+function set_win_title(){
+    echo -ne "\033]0; $(basename "$HOSTNAME") \007"
+}
+starship_precmd_user_func="set_win_title"
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"

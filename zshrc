@@ -34,6 +34,13 @@ fi
 alias ls="ls -G"
 alias brewup='brew update; brew upgrade; brew cask upgrade; brew cleanup'
 
+# Set window title
+function set_win_title(){
+    echo -ne "\033]0; $(basename "$HOST") \007"
+}
+
+starship_precmd_user_func="set_win_title"
+
 # Configure command line prompt
 # . /usr/local/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
 eval "$(starship init zsh)"

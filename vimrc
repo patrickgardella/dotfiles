@@ -31,3 +31,10 @@ autocmd BufNewFile,BufRead \*.{md,mdwn,mkd,mkdn,mark\*} set filetype=markdown
 
 " Autocomplete with dictionary words when spell check is on
 set complete+=kspell
+
+" Improve search
+set ignorecase                  " To ignore case when searching.
+set smartcase                   " When searching try to be smart about cases.
+set hlsearch                    " To highlight search results.
+set incsearch                   " To make search act like search in modern browsers.
+set magic                       " For regular expressions turn magic on.

@@ -50,4 +50,8 @@ compresspdf() {
   gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/${3:-"screen"} -dCompatibilityLevel=1.4 -sOutputFile="$2" "$1"
 }
 
+# Configure Github copilot
 eval "$(gh copilot alias -- zsh)"
+
+# Configure 1password cli completion
+eval "$(op completion zsh)"; compdef _op op

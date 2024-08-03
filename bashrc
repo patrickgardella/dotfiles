@@ -113,3 +113,6 @@ source ~/.bashrc-local
 
 #Set GIT Editor once and forall:
 export GIT_EDITOR=vim
+
+## Configure Starship
+eval "$(starship init bash)"

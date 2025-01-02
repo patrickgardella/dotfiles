@@ -116,3 +116,9 @@ export GIT_EDITOR=vim
 
 ## Configure Starship
 eval "$(starship init bash)"
+
+## Configure Helm
+eval "$(helm completion bash)"
+
+## Configure kubectl
+eval "$(kubectl completion bash)"

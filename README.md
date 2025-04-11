@@ -7,6 +7,7 @@ Configure my local environment on a new system
 ./bootstrap.sh
 git config --global user.name "Your Name"
 git config --global user.email you@example.com
+git config --global core.editor "vim" 
 ```
 
 # VIM packages
@@ -25,6 +26,7 @@ git commit
 
 ```
 git submodule update --remote --merge
+git add .
 git commit
 ```
 
@@ -34,6 +36,7 @@ git commit
 git submodule deinit .vim/pack/plugins/start/vim-airline
 git rm .vim/pack/plugins/start/vim-airline
 rm -Rf .git/modules/.vim/pack/plugins/start/vim-airline
+git add .
 git commit
 ```
 

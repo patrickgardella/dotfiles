@@ -27,3 +27,12 @@ vim.opt.smartcase = true  -- When searching try to be smart about cases.
 vim.opt.hlsearch = true   -- To highlight search results.
 vim.opt.incsearch = true  -- To make search act like search in modern browsers.
 vim.opt.magic = true      -- For regular expressions turn magic on.
+
+-- Configure diagnostics.
+vim.diagnostic.config({
+	severity_sort = true,
+	virtual_text = {
+		severity = { min = vim.diagnostic.severity.WARN },
+		spacing = 8,
+	},
+})

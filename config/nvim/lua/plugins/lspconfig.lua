@@ -174,6 +174,16 @@ return {
 						end
 					},
 
+					hcl = {
+						function()
+							return {
+								exec = "terragrunt",
+								args = { "hclfmt" },
+								stdin = false
+							}
+						end
+					},
+
 					-- Use the special "*" filetype for defining formatter configurations on
 					-- any filetype
 					["*"] = {

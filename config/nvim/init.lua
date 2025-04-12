@@ -36,3 +36,14 @@ vim.diagnostic.config({
 		spacing = 8,
 	},
 })
+
+vim.api.nvim_exec(
+	[[
+    augroup FormatAutogroup
+      autocmd!
+      autocmd BufWritePost *.hcl,*.tf FormatWrite
+      autocmd BufNewFile,BufRead *.hcl set filetype=terraform syntax=terraform
+    augroup END
+  ]],
+	true
+)

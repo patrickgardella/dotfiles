@@ -20,10 +20,6 @@ source ~/.zsh_plugins.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
@@ -55,3 +51,19 @@ eval "$(gh copilot alias -- zsh)"
 
 # Configure 1password cli completion
 eval "$(op completion zsh)"; compdef _op op
+
+# Remove shared history
+unsetopt inc_append_history
+unsetopt share_history
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/patrick.gardella/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/patrick.gardella/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/patrick.gardella/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/patrick.gardella/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"

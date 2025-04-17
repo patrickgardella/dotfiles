@@ -52,6 +52,9 @@ eval "$(gh copilot alias -- zsh)"
 # Configure 1password cli completion
 eval "$(op completion zsh)"; compdef _op op
 
+# Configure tms cli completion
+source <(COMPLETE=zsh tms)
+
 # Remove shared history
 unsetopt inc_append_history
 unsetopt share_history
@@ -62,6 +65,7 @@ if [ -f '/Users/patrick.gardella/Downloads/google-cloud-sdk/path.zsh.inc' ]; the
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/patrick.gardella/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/patrick.gardella/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
+## Node Version Manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

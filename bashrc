@@ -122,3 +122,5 @@ eval "$(helm completion bash)"
 
 ## Configure kubectl
 eval "$(kubectl completion bash)"
+
+. "$HOME/.local/bin/env"

@@ -67,3 +67,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+# Created by `pipx` on 2025-04-15 20:23:46
+export PATH="$PATH:/Users/patrick.gardella/.local/bin"
+
+. "$HOME/.local/bin/env"

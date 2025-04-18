@@ -6,5 +6,5 @@ return {
 
 	-- use :help copilot
 
-	"github/copilot.vim"
+	"github/copilot.vim",
 }

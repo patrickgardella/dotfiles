@@ -65,11 +65,22 @@ return {
 			local lspconfig = require('lspconfig')
 
 			-- Server-specific settings. See `:help lspconfig-setup`
-			lspconfig.rust_analyzer.setup {
+
+			-- Configure rust_analyzer
+			vim.lsp.config('rust_analyzer', {
 				settings = {
-					['rust-analyzer'] = {},
+					['rust-analyzer'] = {
+						diagnostics = {
+							enable = false
+						}
+					},
 				},
-			}
+			})
+
+			lspconfig.rust_analyzer.setup {}
+
+			-- Configure the rest of them
+
 			-- https://ncona.com/2024/02/using-arduino-language-server-with-neovim
 			lspconfig.arduino_language_server.setup {}
 			lspconfig.clangd.setup {}

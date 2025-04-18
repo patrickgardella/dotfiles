@@ -79,3 +79,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		--		end
 	end,
 })
+
+-- Open windows, like chats, on the right side of the screenrow
+vim.g.splitright = true

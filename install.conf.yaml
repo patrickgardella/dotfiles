@@ -15,6 +15,7 @@
       force: false
     ~/.profile: profile
     ~/.tmux.conf: tmux.conf
+    ~/.vale.ini: vale.ini
     ~/.vim/pack:
       path: .vim/pack
       force: false

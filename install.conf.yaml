@@ -14,7 +14,6 @@
       path: config/nvim
       force: false
     ~/.profile: profile
-    ~/.luacheckrc: luacheckrc
     ~/.tmux.conf: tmux.conf
     ~/.vim/pack:
       path: .vim/pack

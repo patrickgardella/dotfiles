@@ -112,6 +112,10 @@ return {
 								indent_size = '2',
 							},
 						},
+						workspace = {
+							library = { vim.env.VIMRUNTIME },
+							checkThirdParty = false,
+						},
 					},
 				},
 			})

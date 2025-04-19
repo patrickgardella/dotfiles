@@ -109,7 +109,9 @@ function exit() {
     fi
 }
 
-source ~/.bashrc-local
+if [ -f ~/.bashrc-local ]; then
+  source ~/.bashrc-local
+fi
 
 #Set GIT Editor once and forall:
 export GIT_EDITOR=vim
@@ -118,10 +120,14 @@ export GIT_EDITOR=vim
 eval "$(starship init bash)"
 
 ## Configure Helm
-eval "$(helm completion bash)"
+if type -P helm &> /dev/null; then
+  eval "$(helm completion bash)"
+fi
 
 ## Configure kubectl
-eval "$(kubectl completion bash)"
+if type -P kubectl &> /dev/null; then
+  eval "$(kubectl completion bash)"
+fi
 
 # Use bash-completion, if available
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \

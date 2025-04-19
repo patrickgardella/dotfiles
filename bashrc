@@ -123,4 +123,6 @@ eval "$(helm completion bash)"
 ## Configure kubectl
 eval "$(kubectl completion bash)"
 
-. "$HOME/.local/bin/env"
+# Use bash-completion, if available
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion

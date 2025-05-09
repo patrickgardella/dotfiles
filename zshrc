@@ -15,8 +15,11 @@ setopt always_to_end # move cursor to end if word had one match
 # Configure Antibody
 #source <(antibody init)
 #antibody bundle < ~/.zsh_plugins
-alias antibodybuild="antibody bundle < ~/.zsh_plugins > ~/.zsh_plugins.sh"
-source ~/.zsh_plugins.sh
+
+if [ -f "$HOME/.zsh_plugins.sh" ]; then
+    alias antibodybuild="antibody bundle < ~/.zsh_plugins > ~/.zsh_plugins.sh"
+    source ~/.zsh_plugins.sh
+fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
@@ -27,7 +30,7 @@ if type brew &>/dev/null; then
   compinit
 fi
 
-alias ls="ls -G"
+#alias ls="ls -G"
 alias brewup='brew update; brew upgrade; brew cask upgrade; brew cleanup'
 
 # Set window title
@@ -47,13 +50,19 @@ compresspdf() {
 }
 
 # Configure Github copilot
-eval "$(gh copilot alias -- zsh)"
+if (( $+commands[op] )); then
+    eval "$(gh copilot alias -- zsh)"
+fi
 
 # Configure 1password cli completion
-eval "$(op completion zsh)"; compdef _op op
+if (( $+commands[op] )); then
+    eval "$(op completion zsh)"; compdef _op op
+fi
 
 # Configure tms cli completion
-source <(COMPLETE=zsh tms)
+if (( $+commands[tms] )); then
+    source <(COMPLETE=zsh tms)
+fi
 
 # Remove shared history
 unsetopt inc_append_history
@@ -75,4 +84,6 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 # Created by `pipx` on 2025-04-15 20:23:46
 export PATH="$PATH:/Users/patrick.gardella/.local/bin"
 
-. "$HOME/.local/bin/env"
+if [ -f "$HOME/.local/bin/env" ]; then
+   . "$HOME/.local/bin/env"
+fi

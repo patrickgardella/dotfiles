@@ -30,7 +30,10 @@ if type brew &>/dev/null; then
   compinit
 fi
 
-#alias ls="ls -G"
+if (( ! $+commands[apk] )); then
+    alias ls="ls -G"
+fi
+
 alias brewup='brew update; brew upgrade; brew cask upgrade; brew cleanup'
 
 # Set window title

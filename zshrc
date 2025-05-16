@@ -2,6 +2,8 @@ HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
 SAVEHIST=$HISTSIZE
 
+export EDITOR="vim"
+
 setopt hist_ignore_all_dups # remove older duplicate entries from history
 setopt hist_reduce_blanks # remove superfluous blanks from history items
 setopt inc_append_history # save history entries as soon as they are entered
@@ -89,4 +91,8 @@ export PATH="$PATH:/Users/patrick.gardella/.local/bin"
 
 if [ -f "$HOME/.local/bin/env" ]; then
    . "$HOME/.local/bin/env"
+fi
+
+if [ -f "$HOME/Documents/projects/neo" ]; then
+   alias neo="source ~/Documents/projects/neo/.venv/bin/activate && neo"
 fi

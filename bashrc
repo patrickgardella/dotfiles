@@ -135,3 +135,6 @@ fi
 
 ## Configure TMS bash-complete 
 echo "source <(COMPLETE=bash tms)" >> ~/.bashrc
+source <(COMPLETE=bash tms)
+source <(COMPLETE=bash tms)
+source <(COMPLETE=bash tms)

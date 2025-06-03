@@ -93,6 +93,6 @@ if [ -f "$HOME/.local/bin/env" ]; then
    . "$HOME/.local/bin/env"
 fi
 
-if [ -f "$HOME/Documents/projects/neo" ]; then
+if [ -d "$HOME/Documents/projects/neo" ]; then
    alias neo="source ~/Documents/projects/neo/.venv/bin/activate && neo"
 fi

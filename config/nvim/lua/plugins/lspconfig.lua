@@ -60,10 +60,10 @@ return {
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
-					'arduino_language_server',
+					--'arduino_language_server',
 					'bashls',
 					-- We need to install clangd for arduino_language_server to work
-					'clangd',
+					--'clangd',
 					'lua_ls',
 					'markdown_oxide',
 					--'r_language_server',
@@ -102,8 +102,16 @@ return {
 			-- Configure the rest of them
 
 			-- https://ncona.com/2024/02/using-arduino-language-server-with-neovim
-			lspconfig.arduino_language_server.setup {}
-			lspconfig.clangd.setup {}
+			lspconfig.arduino_language_server.setup {
+				cmd = {
+					"arduino-language-server",
+					"-cli-config", "/home/patrick/.arduino15/arduino-cli.yaml",
+					"-fqbn", "arduino:uvr:uno",
+					"-cli", "/usr/bin/arduino-cli",
+					"-clangd", "/usr/bin/clangd" 
+				}
+			}
+			-- lspconfig.clangd.setup {}
 			lspconfig.yamlls.setup {
 				settings = {
 					yaml = {

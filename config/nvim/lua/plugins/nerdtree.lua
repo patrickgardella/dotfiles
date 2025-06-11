@@ -3,17 +3,24 @@ return {
 	-- Start: `:NERDTree`
 	-- Validated: 7/10/24
 
-	-- NerdTree is a file system explorer for the Vim editor. It provides a tree view of files and directories, allowing users to navigate and manage their file system more easily.
+	-- NerdTree is a file system explorer for the Vim editor. It provides a tree view of files and directories,
+	-- allowing users to navigate and manage their file system more easily.
 
-	"preservim/nerdtree",
+	{
+		"preservim/nerdtree",
+		config = function()
+			-- Add direct VimScript approach (this is the standard solution from NERDTree)
+			vim.cmd([[
+                                autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+                        ]])
+		end,
+	},
 
 	-- https://github.com/tiagofumo/vim-nerdtree-syntax-highlight
 	-- Validated: 7/10/24
-
-	"tiagofumo/vim-nerdtree-syntax-highlight",
+	{ "tiagofumo/vim-nerdtree-syntax-highlight" },
 
 	-- https://github.com/ryanoasis/vim-devicons
 	-- Validated: 7/10/24
-
-	"ryanoasis/vim-devicons"
+	{ "ryanoasis/vim-devicons" },
 }

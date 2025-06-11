@@ -81,7 +81,6 @@ return {
 			vim.g.LanguageClient_serverCommands = {
 				r = { "R", "--slave", "-e", "languageserver::run()" } }
 
-
 			local lspconfig = require('lspconfig')
 
 			-- Server-specific settings. See `:help lspconfig-setup`
@@ -108,7 +107,7 @@ return {
 					"-cli-config", "/home/patrick/.arduino15/arduino-cli.yaml",
 					"-fqbn", "arduino:uvr:uno",
 					"-cli", "/usr/bin/arduino-cli",
-					"-clangd", "/usr/bin/clangd" 
+					"-clangd", "/usr/bin/clangd"
 				}
 			}
 			-- lspconfig.clangd.setup {}
@@ -225,6 +224,10 @@ return {
 								stdin = false
 							}
 						end
+					},
+
+					arduino = {
+						require("formatter.filetypes.c").clangformat,
 					},
 
 					-- Use the special "*" filetype for defining formatter configurations on

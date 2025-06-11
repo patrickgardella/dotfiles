@@ -226,10 +226,6 @@ return {
 						end
 					},
 
-					arduino = {
-						require("formatter.filetypes.c").clangformat,
-					},
-
 					-- Use the special "*" filetype for defining formatter configurations on
 					-- any filetype
 					["*"] = {

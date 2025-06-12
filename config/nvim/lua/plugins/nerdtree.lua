@@ -6,6 +6,9 @@ return {
 	-- NerdTree is a file system explorer for the Vim editor. It provides a tree view of files and directories,
 	-- allowing users to navigate and manage their file system more easily.
 
+	-- This plug is not supported any more. Consider migrating to nvim-tree.lua
+	-- https://tao.zz.ac/vim/migrate-nerdtree-to-nvim-tree.html
+
 	{
 		"preservim/nerdtree",
 		config = function()

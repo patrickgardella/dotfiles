@@ -47,6 +47,7 @@ tags
 
 # persistent undo
 *.un~
+*~
 
 # session
 Session.vim

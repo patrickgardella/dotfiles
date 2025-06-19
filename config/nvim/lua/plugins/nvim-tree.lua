@@ -10,12 +10,16 @@ return {
       view = {
         width = 30,
       },
+      update_focused_file = {
+        enable = true,
+      },
     })
 
     -- open nvim-tree when starting nvim
     local function open_nvim_tree()
       -- open the tree
       require("nvim-tree.api").tree.open()
+      vim.cmd.wincmd("p")
     end
 
     vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })

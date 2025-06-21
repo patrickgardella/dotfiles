@@ -69,14 +69,15 @@ return {
 
   {
     "neovim/nvim-lspconfig", -- If you enable the server here, then don't enable it in mason-lspconfig above!
+
     config = function()
+      -- Server-specific settings. See `:help lspconfig-setup`
+
       -- Configure the R lintr
       vim.g.LanguageClient_serverCommands = {
         r = { "R", "--slave", "-e", "languageserver::run()" } }
 
       local lspconfig = require('lspconfig')
-
-      -- Server-specific settings. See `:help lspconfig-setup`
 
       -- Configure rust_analyzer
       vim.lsp.config('rust_analyzer', {

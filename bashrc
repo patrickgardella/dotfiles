@@ -134,20 +134,8 @@ fi
     . /usr/share/bash-completion/bash_completion
 
 ## Configure TMS bash-complete 
-echo "source <(COMPLETE=bash tms)" >> ~/.bashrc
-source <(COMPLETE=bash tms)
-source <(COMPLETE=bash tms)
-source <(COMPLETE=bash tms)
-source <(COMPLETE=bash tms)
-source <(COMPLETE=bash tms)
-source <(COMPLETE=bash tms)
-source <(COMPLETE=bash tms)
-source <(COMPLETE=bash tms)
-source <(COMPLETE=bash tms)
-source <(COMPLETE=bash tms)
-source <(COMPLETE=bash tms)
-source <(COMPLETE=bash tms)
-source <(COMPLETE=bash tms)
-source <(COMPLETE=bash tms)
-source <(COMPLETE=bash tms)
-source <(COMPLETE=bash tms)
+# echo "source <(COMPLETE=bash tms)" >> ~/.bashrc
+if [ command -v tms &> /dev/null ]; then
+    source <(COMPLETE=bash tms)
+fi
+

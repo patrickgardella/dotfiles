@@ -9,16 +9,19 @@ require("config.globals")
 --read in global options
 require("config.options")
 
+-- read in keymaps
+require("config.keymaps")
+
 local opts = {
-    defaults = {
-	lazy = true,
-    },
-    rtp = {
-	disabled_plugins = {
-	    "netrw",
-	    "netrwPlugin",
-	}
+  defaults = {
+    lazy = true,
+  },
+  rtp = {
+    disabled_plugins = {
+      "netrw",
+      "netrwPlugin",
     }
+  }
 }
 
 -- configure Lazy
@@ -47,6 +50,7 @@ vim.api.nvim_exec(
 )
 
 -- Enable auto-completion and auto-formatting + linting
+-- Taken from `neovim.io/doc/user/lsp.html#lsp-attach`
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('my.lsp', {}),
   callback = function(args)

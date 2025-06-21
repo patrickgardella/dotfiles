@@ -24,6 +24,11 @@ fi
 
 ## Configure Starship
 eval "$(starship init bash)"
-. "$HOME/.cargo/env"
 
-. "$HOME/.local/bin/env"
+if [ command -v ~/.cargo/env &>/dev/null ]; then
+  . "$HOME/.cargo/env"
+fi
+
+if [ command -v ~/.local/bin/env &>/dev/null ]; then
+  . "$HOME/.local/bin/env"
+fi

@@ -44,22 +44,6 @@ return {
   },
 
   {
-    "williamboman/mason-lspconfig.nvim",
-    dependencies = {
-      'williamboman/mason.nvim',
-    },
-
-    config = function()
-      require("mason-lspconfig").setup({
-        ensure_installed = { -- If you enable it here, don't enable it in lspconfig below!
-          'bashls',
-          'markdown_oxide',
-        },
-      })
-    end
-  },
-
-  {
     "neovim/nvim-lspconfig", -- If you enable the server here, then don't enable it in mason-lspconfig above!
 
     config = function()

@@ -1,14 +1,22 @@
 return {
   "neovim/nvim-lspconfig", -- If you enable the server here, then don't enable it in mason-lspconfig above!
 
+  dependencies = {
+    "williamboman/mason.nvim",           -- For installing LSP servers
+    "williamboman/mason-lspconfig.nvim", -- For configuring LSP servers
+  },
+
+  -- Rad Lectures uses `efm` for all formatting, linting, etc
+  -- See: https://www.youtube.com/watch?v=ZjMzBd1Dqz8&list=WL&index=19 1:35:00
+
   config = function()
     -- Server-specific settings. See `:help lspconfig-setup`
+
+    local lspconfig = require('lspconfig')
 
     -- Configure the R lintr
     vim.g.LanguageClient_serverCommands = {
       r = { "R", "--slave", "-e", "languageserver::run()" } }
-
-    local lspconfig = require('lspconfig')
 
     -- Configure rust_analyzer
     vim.lsp.config('rust_analyzer', {

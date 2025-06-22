@@ -16,3 +16,6 @@ keymap.set('n', '<C-d>', '<C-w>l', opts) -- Navigate Right
 keymap.set('n', '<leader>sv', ':vsplit<CR>', opts)          -- Vertical split
 keymap.set('n', '<leader>sh', ':split<CR>', opts)           -- Horizontal split
 keymap.set('n', '<leader>sm', ':MaximizerToggle<CR>', opts) -- Maximize current window
+
+-- Feature toggles
+keymap.set('n', '<leader>ww', ':set wrap!<CR>', opts) -- Toggle word wrap

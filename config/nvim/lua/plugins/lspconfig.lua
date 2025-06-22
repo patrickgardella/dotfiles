@@ -1,14 +1,6 @@
 return {
   -- https://github.com/williamboman/mason-lspconfig.nvim
   -- https://github.com/stevearc/conform.nvim
-  {
-    "williamboman/mason.nvim",
-    build = ":MasonUpdate",
-    lazy = false,
-    config = function()
-      require("mason").setup()
-    end
-  },
 
   {
     "nvim-neotest/nvim-nio",

@@ -1,5 +1,9 @@
--- One user used "efm" (go-lang) as the formatter, linter, etc.
+-- https://github.com/williamboman/mason-lspconfig.nvim
 
+-- https://github.com/williamboman/mason-lspconfig.nvim
+-- https://github.com/stevearc/conform.nvim
+
+-- One user used "efm" (go-lang) as the formatter, linter, etc.
 -- He also used `event = "BufReadPre"`
 
 return {

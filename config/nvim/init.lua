@@ -1,5 +1,5 @@
 -- disable netrw at the very start of your init.lua
--- (needed by nvim-tree
+-- (needed by nvim-tree)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
@@ -87,7 +87,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.api.nvim_create_autocmd("BufWritePre", {
       buffer = args.buf,
       callback = function()
-        vim.lsp.buf.format {async = false, id = args.data.client_id }
+        vim.lsp.buf.format { async = false, id = args.data.client_id }
       end,
     })
   end

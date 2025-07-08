@@ -18,6 +18,7 @@ return {
         'bashls',
         'markdown_oxide',
       },
+      automatic_enable = false, --disable
     })
   end
 }

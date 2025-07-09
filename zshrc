@@ -55,8 +55,10 @@ compresspdf() {
 }
 
 # Configure Github copilot
-if (( $+commands[op] )); then
+if (( $+commands[gh] )); then
+  if gh extension list | grep -q "copilot"; then
     eval "$(gh copilot alias -- zsh)"
+  fi 
 fi
 
 # Configure 1password cli completion

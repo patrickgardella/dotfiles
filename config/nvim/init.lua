@@ -3,15 +3,6 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
---read in global configuraiton settings
-require("config.globals")
-
---read in global options
-require("config.options")
-
--- read in keymaps
-require("config.keymaps")
-
 local opts = {
   defaults = {
     lazy = true,
@@ -26,6 +17,17 @@ local opts = {
 
 -- configure Lazy
 require("config.lazy")
+
+vim.keymap.set("n", "<leader>tt", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+
+--read in global options
+require("config.options")
+
+-- read in keymaps
+require("config.keymaps")
+
+--read in global configuraiton settings
+require("config.globals")
 
 -- Configure diagnostics.
 vim.diagnostic.config({

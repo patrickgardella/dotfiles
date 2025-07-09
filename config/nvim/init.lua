@@ -18,8 +18,6 @@ local opts = {
 -- configure Lazy
 require("config.lazy")
 
-vim.keymap.set("n", "<leader>tt", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
-
 --read in global options
 require("config.options")
 

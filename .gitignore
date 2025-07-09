@@ -64,6 +64,3 @@ Session.vim
 
 # lock files
 config/nvim/lazy-lock.json
-
-# test plugin files locally only
-config/nvim/lua/plugins/disable

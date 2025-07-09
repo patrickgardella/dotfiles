@@ -1,8 +1,16 @@
 return {
 
   "nvim-tree/nvim-tree.lua",
+
+  dependencies = {
+    "mini.icons",
+  },
+
   lazy = false,
   config = function()
+    require('mini.icons').setup()
+    MiniIcons.mock_nvim_web_devicons()
+
     require("nvim-tree").setup({
       filters = {
         dotfiles = false, --show dotfiles

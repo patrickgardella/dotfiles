@@ -1,16 +1,14 @@
 return {
-	'echasnovski/mini.icons',
+  'echasnovski/mini.icons',
 
-	opts = {},
-	version = '*',
-	lazy = true,
+  opts = {},
+  version = false,
+  lazy = false,
 
-	specs = {
-		{ "nvim-tree/nvim-web-devicons", enabled = false, optional = true },
-	},
+  specs = {},
 
-	config = function()
-		require('mini.icons').setup()
-		MiniIcons.mock_nvim_web_devicons()
-	end,
+  config = function()
+    require('mini.icons').setup()
+    MiniIcons.mock_nvim_web_devicons()
+  end,
 }

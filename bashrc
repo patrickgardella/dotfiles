@@ -139,3 +139,7 @@ if [ command -v tms &> /dev/null ]; then
     source <(COMPLETE=bash tms)
 fi
 
+# Configure Cargo & Rust
+if [ -f /home/patrick/.cargo/env ]; then
+  . "$HOME/.cargo/env"
+fi

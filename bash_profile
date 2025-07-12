@@ -25,10 +25,6 @@ fi
 ## Configure Starship
 eval "$(starship init bash)"
 
-if [ -f /home/patrick/.cargo/env ]; then
-  . "$HOME/.cargo/env"
-fi
-
 if [ -d /home/patrick/.local/bin ]; then
   export PATH=$PATH:$HOME/.local/bin
 fi

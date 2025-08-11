@@ -28,3 +28,7 @@ eval "$(starship init bash)"
 if [ -d /home/patrick/.local/bin ]; then
   export PATH=$PATH:$HOME/.local/bin
 fi
+
+if [ -z "$SSH_AUTH_SOCK" ]; then
+      eval $(ssh-agent -s)
+fi

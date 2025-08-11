@@ -98,3 +98,7 @@ fi
 if [ -d "$HOME/Documents/projects/neo" ]; then
    alias neo="source ~/Documents/projects/neo/.venv/bin/activate && neo"
 fi
+
+if [ -z "$SSH_AUTH_SOCK" ]; then
+      eval $(ssh-agent -s)
+fi

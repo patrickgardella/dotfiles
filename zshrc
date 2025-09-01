@@ -76,10 +76,10 @@ unsetopt inc_append_history
 unsetopt share_history
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/patrick.gardella/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/patrick.gardella/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "$HOME/Downloads/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/Downloads/google-cloud-sdk/path.zsh.inc"; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/patrick.gardella/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/patrick.gardella/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc"; fi
 
 ## Node Version Manager
 export NVM_DIR="$HOME/.nvm"
@@ -88,8 +88,8 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
-# Created by `pipx` on 2025-04-15 20:23:46
-export PATH="$PATH:/Users/patrick.gardella/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
+#export PATH="$PATH:/Users/patrick.gardella/.local/bin"
 
 if [ -f "$HOME/.local/bin/env" ]; then
    . "$HOME/.local/bin/env"

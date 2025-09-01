@@ -32,7 +32,6 @@ return {
     --	require("mason-nvim-dap").setup({
     opts = {
       ensure_installed = {
-        "chrome",
         'bash',
         'bash-debug-adapter'
       },

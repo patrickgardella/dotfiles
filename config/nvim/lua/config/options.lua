@@ -36,5 +36,5 @@ vim.opt.undofile = true                           -- To enable persistent undo f
 vim.opt.undodir = vim.fn.expand("~/.vim/undodir") -- To set the directory for undo files
 vim.opt.backspace = "indent,eol,start"            -- To allow backspacing over everything in insert mode
 vim.opt.mouse:append("a")                         -- To enable mouse support in all modes
-vim.opt.clipboard:append("unnamedplus")           -- To use the system clipboard for copy/paste operations
+-- vim.opt.clipboard:append("unnamedplus")           -- To use the system clipboard for copy/paste operations
 vim.opt.encoding = "utf-8"                        -- To set the default encoding to UTF-8

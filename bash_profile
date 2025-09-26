@@ -32,3 +32,8 @@ fi
 if [ -z "$SSH_AUTH_SOCK" ]; then
       eval $(ssh-agent -s)
 fi
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/patrick.gardella/.lmstudio/bin"
+# End of LM Studio CLI section
+

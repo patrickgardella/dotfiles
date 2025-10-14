@@ -18,6 +18,9 @@ setopt always_to_end # move cursor to end if word had one match
 #source <(antibody init)
 #antibody bundle < ~/.zsh_plugins
 
+autoload -Uz compinit
+compinit
+
 if [ -f "$HOME/.zsh_plugins.sh" ]; then
     alias antibodybuild="antibody bundle < ~/.zsh_plugins > ~/.zsh_plugins.sh"
     source ~/.zsh_plugins.sh

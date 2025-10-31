@@ -84,6 +84,13 @@ if [ -f "$HOME/Downloads/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/Downloa
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc"; fi
 
+## Cargo and Rust
+# Configure Cargo & Rust
+if [ -f /home/patrick/.cargo/env ]; then
+  export PATH="$PATH:/home/patrick/.cargo/bin"
+  . "$HOME/.cargo/env"
+fi
+
 ## Node Version Manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

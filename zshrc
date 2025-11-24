@@ -14,9 +14,9 @@ setopt auto_list # automatically list choices on ambiguous completion
 setopt auto_menu # automatically use menu completion
 setopt always_to_end # move cursor to end if word had one match
 
-# Configure Antibody
-#source <(antibody init)
-#antibody bundle < ~/.zsh_plugins
+# Remove shared history
+unsetopt inc_append_history
+unsetopt share_history
 
 autoload -Uz compinit
 compinit
@@ -26,7 +26,9 @@ if [ -f "$HOME/.zsh_plugins.sh" ]; then
     source ~/.zsh_plugins.sh
 fi
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+fi 
 
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
@@ -52,11 +54,6 @@ starship_precmd_user_func="set_win_title"
 # . /usr/local/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
 eval "$(starship init zsh)"
 
-# Usage: compresspdf [input file] [output file] [screen*|ebook|printer|prepress]
-compresspdf() {
-  gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/${3:-"screen"} -dCompatibilityLevel=1.4 -sOutputFile="$2" "$1"
-}
-
 # Configure Github copilot
 if (( $+commands[gh] )); then
   if gh extension list | grep -q "copilot"; then
@@ -74,9 +71,10 @@ if (( $+commands[tms] )); then
     source <(COMPLETE=zsh tms)
 fi
 
-# Remove shared history
-unsetopt inc_append_history
-unsetopt share_history
+# Include the brew path on MacOS
+#if [[ "$OSTYPE" == "darwin"* ]]; then
+    #export PATH="/opt/homebrew/bin:$PATH"
+#fi
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/Downloads/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/Downloads/google-cloud-sdk/path.zsh.inc"; fi
@@ -95,8 +93,6 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 export PATH="$PATH:$HOME/.local/bin"
 

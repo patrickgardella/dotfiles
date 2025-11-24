@@ -111,3 +111,7 @@ export PATH="$PATH:/Users/patrick.gardella/.lmstudio/bin"
 
 # opencode
 export PATH=/home/patrick/.opencode/bin:$PATH
+
+# Map keys
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line

@@ -29,7 +29,7 @@ vim.opt.completeopt = { "menuone", "noselect", "noinsert" } -- To configure comp
 -- Behaviour
 vim.opt.splitright = true                         -- To open vertical splits to the right
 vim.opt.splitbelow = true                         -- To open horizontal splits below the current window
-vim.opt.swapfile = true                           -- To disable swap files
+vim.opt.swapfile = true                           -- To enable swap files
 vim.opt.backup = false                            -- To disable backup files
 vim.opt.writebackup = true                        -- To enable backup files until write is successful
 vim.opt.undofile = true                           -- To enable persistent undo files

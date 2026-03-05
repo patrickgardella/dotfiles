@@ -1,26 +1,3 @@
----@brief
----
---- https://github.com/rust-lang/rust-analyzer
----
---- rust-analyzer (aka rls 2.0), a language server for Rust
----
----
---- See [docs](https://rust-analyzer.github.io/book/configuration.html) for extra settings. The settings can be used like this:
---- ```lua
---- vim.lsp.config('rust_analyzer', {
----   settings = {
----     ['rust-analyzer'] = {
----       diagnostics = {
----         enable = false;
----       }
----     }
----   }
---- })
---- ```
----
---- Note: do not set `init_options` for this LS config, it will be automatically populated by the contents of settings["rust-analyzer"] per
---- https://github.com/rust-lang/rust-analyzer/blob/eb5da56d839ae0a9e9f50774fa3eb78eb0964550/docs/dev/lsp-extensions.md?plain=1#L26.
-
 local function reload_workspace(bufnr)
   local clients = vim.lsp.get_clients { bufnr = bufnr, name = 'rust_analyzer' }
   for _, client in ipairs(clients) do
@@ -76,13 +53,8 @@ return {
     end
 
     local cmd = {
-      'cargo',
-      'metadata',
-      '--no-deps',
-      '--format-version',
-      '1',
-      '--manifest-path',
-      cargo_crate_dir .. '/Cargo.toml',
+      'cargo', 'metadata', '--no-deps', '--format-version', '1',
+      '--manifest-path', cargo_crate_dir .. '/Cargo.toml',
     }
 
     vim.system(cmd, { text = true }, function(output)
@@ -93,7 +65,6 @@ return {
             cargo_workspace_root = vim.fs.normalize(result['workspace_root'])
           end
         end
-
         on_dir(cargo_workspace_root or cargo_crate_dir)
       else
         vim.schedule(function()
@@ -108,7 +79,6 @@ return {
     },
   },
   before_init = function(init_params, config)
-    -- See https://github.com/rust-lang/rust-analyzer/blob/eb5da56d839ae0a9e9f50774fa3eb78eb0964550/docs/dev/lsp-extensions.md?plain=1#L26
     if config.settings and config.settings['rust-analyzer'] then
       init_params.initializationOptions = config.settings['rust-analyzer']
     end

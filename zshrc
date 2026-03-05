@@ -6,20 +6,12 @@ export EDITOR="vim"
 
 setopt hist_ignore_all_dups # remove older duplicate entries from history
 setopt hist_reduce_blanks # remove superfluous blanks from history items
-setopt inc_append_history # save history entries as soon as they are entered
-setopt share_history # share history between different instances of the shell
 
 setopt correct_all # autocorrect commands
 setopt auto_list # automatically list choices on ambiguous completion
 setopt auto_menu # automatically use menu completion
 setopt always_to_end # move cursor to end if word had one match
 
-# Remove shared history
-unsetopt inc_append_history
-unsetopt share_history
-
-autoload -Uz compinit
-compinit
 
 if [ -f "$HOME/.zsh_plugins.sh" ]; then
     alias antibodybuild="antibody bundle < ~/.zsh_plugins > ~/.zsh_plugins.sh"
@@ -28,20 +20,20 @@ fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
-fi 
+fi
 
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-
-  autoload -Uz compinit
-  compinit
 fi
+
+autoload -Uz compinit
+compinit
 
 if (( ! $+commands[apk] )); then
     alias ls="ls -G"
 fi
 
-alias brewup='brew update; brew upgrade; brew cask upgrade; brew cleanup'
+alias brewup='brew update; brew upgrade; brew upgrade --cask; brew cleanup'
 
 # Set window title
 function set_win_title(){
@@ -71,10 +63,6 @@ if (( $+commands[tms] )); then
     source <(COMPLETE=zsh tms)
 fi
 
-# Include the brew path on MacOS
-#if [[ "$OSTYPE" == "darwin"* ]]; then
-    #export PATH="/opt/homebrew/bin:$PATH"
-#fi
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/Downloads/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/Downloads/google-cloud-sdk/path.zsh.inc"; fi
@@ -84,8 +72,7 @@ if [ -f "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/D
 
 ## Cargo and Rust
 # Configure Cargo & Rust
-if [ -f /home/patrick/.cargo/env ]; then
-  export PATH="$PATH:/home/patrick/.cargo/bin"
+if [ -f "$HOME/.cargo/env" ]; then
   . "$HOME/.cargo/env"
 fi
 
@@ -97,7 +84,7 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:$HOME/.local/bin"
 
 if [ -d "$HOME/.local/share/nvim/mason/bin" ]; then
-   export PATH="$PATH:~/.local/share/nvim/mason/bin"
+   export PATH="$PATH:$HOME/.local/share/nvim/mason/bin"
 fi
 
 
@@ -111,15 +98,20 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
 fi
 
 # Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/patrick.gardella/.lmstudio/bin"
-# End of LM Studio CLI section
+if [ -d "$HOME/.lmstudio/bin" ]; then
+  export PATH="$PATH:$HOME/.lmstudio/bin"
+fi
 
 # opencode
-export PATH=/home/patrick/.opencode/bin:$PATH
+if [ -d "$HOME/.opencode/bin" ]; then
+  export PATH="$HOME/.opencode/bin:$PATH"
+fi
 
 # Map keys
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 
-# opencode
-export PATH=/Users/patrick.gardella/.opencode/bin:$PATH
+# Machine-specific settings
+if [ -f "$HOME/.zshrc.local" ]; then
+  source "$HOME/.zshrc.local"
+fi

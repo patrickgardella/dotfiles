@@ -96,6 +96,11 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$PATH:$HOME/.local/bin"
 
+if [ -d "$HOME/.local/share/nvim/mason/bin" ]; then
+   export PATH="$PATH:~/.local/share/nvim/mason/bin"
+fi
+
+
 if [ -f "$HOME/.local/bin/env" ]; then
    . "$HOME/.local/bin/env"
 fi
@@ -115,3 +120,6 @@ export PATH=/home/patrick/.opencode/bin:$PATH
 # Map keys
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
+
+# opencode
+export PATH=/Users/patrick.gardella/.opencode/bin:$PATH

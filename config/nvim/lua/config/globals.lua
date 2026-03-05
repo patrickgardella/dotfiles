@@ -1,2 +1,2 @@
 -- configure Python VEnv
-vim.g.python3_host_prog = '/home/patrick/.venv/bin/python'
+vim.g.python3_host_prog = vim.fn.exepath('python3')

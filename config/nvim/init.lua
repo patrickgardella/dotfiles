@@ -3,18 +3,6 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-local opts = {
-  defaults = {
-    lazy = true,
-  },
-  rtp = {
-    disabled_plugins = {
-      "netrw",
-      "netrwPlugin",
-    }
-  }
-}
-
 -- configure Lazy
 require("config.lazy")
 
@@ -38,16 +26,18 @@ vim.diagnostic.config({
 
 
 -- Configure format on write
-vim.api.nvim_exec(
-  [[
-    augroup FormatAutogroup
-      autocmd!
-      autocmd BufWritePost *.hcl,*.tf FormatWrite
-      autocmd BufNewFile,BufRead *.hcl set filetype=terraform syntax=terraform
-    augroup END
-  ]],
-  true
-)
+vim.api.nvim_create_autocmd('BufWritePost', {
+  group = vim.api.nvim_create_augroup('FormatAutogroup', { clear = true }),
+  pattern = { '*.hcl', '*.tf' },
+  callback = function() vim.cmd('FormatWrite') end,
+})
+vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
+  pattern = '*.hcl',
+  callback = function()
+    vim.bo.filetype = 'terraform'
+    vim.bo.syntax = 'terraform'
+  end,
+})
 
 -- Enable auto-completion and auto-formatting + linting
 -- Taken from `neovim.io/doc/user/lsp.html#lsp-attach`

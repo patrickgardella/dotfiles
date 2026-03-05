@@ -6,24 +6,58 @@
 - clean: ["~"]
 
 - link:
-    ~/.bash_logout: bash_logout
-    ~/.bash_profile: bash_profile
-    ~/.bashrc: bashrc
+    # Bash — guard on bash being present; bash_logout is Linux-only
+    ~/.bash_logout:
+      path: bash_logout
+      if: '[ "$(uname -s)" = "Linux" ] && command -v bash >/dev/null 2>&1'
+    ~/.bash_profile:
+      path: bash_profile
+      if: 'command -v bash >/dev/null 2>&1'
+    ~/.bashrc:
+      path: bashrc
+      if: 'command -v bash >/dev/null 2>&1'
+
+    # Profile — POSIX shells on Unix only
+    ~/.profile:
+      path: profile
+      if: '[ "$(uname -s)" = "Linux" ] || [ "$(uname -s)" = "Darwin" ]'
+
+    # Zsh — guard on zsh being present
+    ~/.zshrc:
+      path: zshrc
+      if: 'command -v zsh >/dev/null 2>&1'
+    ~/.zprofile:
+      path: zprofile
+      if: 'command -v zsh >/dev/null 2>&1'
+    ~/.zsh_plugins:
+      path: zsh_plugins
+      if: 'command -v zsh >/dev/null 2>&1'
+
+    # Tmux — guard on tmux being present
+    ~/.tmux.conf:
+      path: tmux.conf
+      if: 'command -v tmux >/dev/null 2>&1'
+
+    # Vim — guard on vim being present
+    ~/.vimrc:
+      path: vimrc
+      if: 'command -v vim >/dev/null 2>&1'
+    ~/.vim/pack:
+      path: .vim/pack
+      force: false
+      if: 'command -v vim >/dev/null 2>&1'
+
+    # Wget — guard on wget being present
+    ~/.wgetrc:
+      path: wgetrc
+      if: 'command -v wget >/dev/null 2>&1'
+
+    # Cross-platform tools (no guard needed)
     ~/.config/starship.toml: config/starship.toml
     ~/.config/nvim:
       path: config/nvim
       force: false
-    ~/.profile: profile
-    ~/.tmux.conf: tmux.conf
     ~/.vale.ini: vale.ini
-    ~/.vim/pack:
-      path: .vim/pack
-      force: false
-    ~/.vimrc: vimrc
-    ~/.wgetrc: wgetrc
-    ~/.zshrc: zshrc
-    ~/.zprofile: zprofile
-    ~/.zsh_plugins: zsh_plugins
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

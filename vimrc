@@ -1,40 +1,62 @@
+" Neovim has its own config — don't load this there
+if has('nvim') | finish | endif
+
 let mapleader = "\\"
 
 " Turn off vi compatibility settings like limited undo
-set nocompatible   " Disable vi-compatibility
-set laststatus=2   " Always show the statusline
-set encoding=utf-8 " Necessary to show unicode glyphs
-set shiftwidth=4   " Allow for indents to be four columns
+set nocompatible
+set encoding=utf-8
 
-" Syntax highlighting based on file extension
+" UI
+set number
+set laststatus=2        " always show the statusline
+set wildmenu            " better : tab completion
+set scrolloff=5         " keep context lines above/below cursor
+set splitright          " new vertical splits go right
+set splitbelow          " new horizontal splits go below
+
+" Editing
+set backspace=indent,eol,start  " sane backspace in insert mode
+set hidden                      " switch buffers without saving
+set autoindent
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
+" Search
+set ignorecase          " case-insensitive search by default
+set smartcase           " case-sensitive when pattern has uppercase
+set hlsearch            " highlight search results
+set incsearch           " incremental search
+set magic               " extended regex
+
+" Persistent undo
+if has('persistent_undo')
+  silent! call mkdir(expand('~/.vim/undo'), 'p')
+  set undofile
+  set undodir=~/.vim/undo
+endif
+
+" Syntax and filetype
 syntax on
-" Automatically insert newlines after 80 characters
-" set textwidth=80
-" Automatically indent
-"set autoindent
-
 filetype plugin indent on
 
-"Have help open in a split to the right, rather than vertically
-autocmd FileType help wincmd L
-
-"Configure theme
-"let g:solarized_termcolors=256
-"colorscheme solarized
+" Colorscheme
 set background=dark
 set termguicolors
-colorscheme solarized8
+try
+  colorscheme solarized8
+catch
+  colorscheme default
+endtry
 
+" Markdown
 let g:vim_markdown_folding_disabled = 1
-
-autocmd BufNewFile,BufRead \*.{md,mdwn,mkd,mkdn,mark\*} set filetype=markdown
+autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 
 " Autocomplete with dictionary words when spell check is on
 set complete+=kspell
 
-" Improve search
-set ignorecase                  " To ignore case when searching.
-set smartcase                   " When searching try to be smart about cases.
-set hlsearch                    " To highlight search results.
-set incsearch                   " To make search act like search in modern browsers.
-set magic                       " For regular expressions turn magic on.
+" Have help open in a vertical split to the right
+autocmd FileType help wincmd L

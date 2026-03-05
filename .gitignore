@@ -11,7 +11,7 @@ vim/backup/*
 *.pyc
 
 # Swap files
-.swp
+*.swp
 
 # Folder view configuration files
 .DS_Store

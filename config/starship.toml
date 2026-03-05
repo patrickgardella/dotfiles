@@ -68,12 +68,13 @@ Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
 
 [username]
-show_always = true
+show_always = false
 style_user = "bg:color_orange fg:color_fg0"
 style_root = "bg:color_orange fg:color_fg0"
 format = '[ $user ]($style)'
 
 [hostname]
+ssh_only = true
 ssh_symbol = '🌐'
 style = "bg:color_orange fg:color_fg0"
 format = '[ $ssh_symbol$hostname]($style)'

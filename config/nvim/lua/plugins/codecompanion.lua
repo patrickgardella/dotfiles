@@ -15,7 +15,7 @@ return {
             },
             schema = {
               model = {
-                default = "gemini-2.0-flash",
+                default = "gemini-2.5-flash",
               },
             },
           })
@@ -28,9 +28,9 @@ return {
       },
     })
 
-    vim.keymap.set({ "n", "v" }, "<leader>cc", "<cmd>CodeCompanionChat toggle<cr>",   { desc = "Toggle AI chat" })
-    vim.keymap.set({ "n", "v" }, "<leader>ci", "<cmd>CodeCompanion<cr>",               { desc = "Inline AI assist" })
-    vim.keymap.set("v",          "<leader>cs", "<cmd>CodeCompanionChat add<cr>",        { desc = "Add selection to chat" })
-    vim.keymap.set({ "n", "v" }, "<leader>cx", "<cmd>CodeCompanionActions<cr>",        { desc = "AI action picker" })
+    vim.keymap.set({ "n", "v" }, "<leader>cc", "<cmd>CodeCompanionChat toggle<cr>", { desc = "Toggle AI chat" })
+    vim.keymap.set({ "n", "v" }, "<leader>ci", "<cmd>CodeCompanion<cr>", { desc = "Inline AI assist" })
+    vim.keymap.set("v", "<leader>cs", "<cmd>CodeCompanionChat add<cr>", { desc = "Add selection to chat" })
+    vim.keymap.set({ "n", "v" }, "<leader>cx", "<cmd>CodeCompanionActions<cr>", { desc = "AI action picker" })
   end,
 }

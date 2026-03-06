@@ -7,7 +7,7 @@ return {
       provider_options = {
         gemini = {
           -- Uses the GEMINI_API_KEY environment variable
-          model = "gemini-2.0-flash",
+          model = "gemini-2.5-flash",
         },
       },
       -- Delay before triggering completion (ms)

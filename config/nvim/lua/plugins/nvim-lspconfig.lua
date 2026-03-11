@@ -7,10 +7,7 @@ return {
   config = function()
     vim.lsp.enable({
       'lua_ls',
-      'rust_analyzer',
       'yamlls',
-      'bashls',
-      'markdown_oxide',
     })
   end
 }

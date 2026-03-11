@@ -15,8 +15,6 @@ return {
   config = function()
     require("mason-lspconfig").setup({
       ensure_installed = { -- If you enable it here, don't enable it in lspconfig below!
-        'bashls',
-        'markdown_oxide',
       },
       automatic_enable = false, --disable
     })

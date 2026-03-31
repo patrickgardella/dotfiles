@@ -4,6 +4,12 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
   },
+  keys = {
+    { "<leader>cc", "<cmd>CodeCompanionChat toggle<cr>", mode = { "n", "v" }, desc = "Toggle AI chat" },
+    { "<leader>ci", "<cmd>CodeCompanion<cr>",            mode = { "n", "v" }, desc = "Inline AI assist" },
+    { "<leader>cs", "<cmd>CodeCompanionChat add<cr>",    mode = "v",          desc = "Add selection to chat" },
+    { "<leader>cx", "<cmd>CodeCompanionActions<cr>",     mode = { "n", "v" }, desc = "AI action picker" },
+  },
   config = function()
     require("codecompanion").setup({
       adapters = {
@@ -27,10 +33,5 @@ return {
         agent  = { adapter = "gemini" },
       },
     })
-
-    vim.keymap.set({ "n", "v" }, "<leader>cc", "<cmd>CodeCompanionChat toggle<cr>", { desc = "Toggle AI chat" })
-    vim.keymap.set({ "n", "v" }, "<leader>ci", "<cmd>CodeCompanion<cr>", { desc = "Inline AI assist" })
-    vim.keymap.set("v", "<leader>cs", "<cmd>CodeCompanionChat add<cr>", { desc = "Add selection to chat" })
-    vim.keymap.set({ "n", "v" }, "<leader>cx", "<cmd>CodeCompanionActions<cr>", { desc = "AI action picker" })
   end,
 }

@@ -24,7 +24,6 @@ vim.opt.magic = true      -- For regular expressions turn magic on.
 vim.opt.termguicolors = true                                -- To enable 24-bit RGB color in the terminal
 vim.opt.colorcolumn = "80"                                  -- To highlight the 80th column
 vim.opt.signcolumn = "yes"                                  -- Add a column for signs (like git changes) or breakpoints
-vim.opt.completeopt = { "menuone", "noselect", "noinsert" } -- To configure completion option - don't select anything by default and don't insert anything by default. If menu is not shown, then don't show anything.
 
 -- Behaviour
 vim.opt.splitright = true                         -- To open vertical splits to the right
@@ -37,4 +36,3 @@ vim.opt.undodir = vim.fn.expand("~/.vim/undodir") -- To set the directory for un
 vim.opt.backspace = "indent,eol,start"            -- To allow backspacing over everything in insert mode
 vim.opt.mouse:append("a")                         -- To enable mouse support in all modes
 -- vim.opt.clipboard:append("unnamedplus")           -- To use the system clipboard for copy/paste operations
-vim.opt.encoding = "utf-8"                        -- To set the default encoding to UTF-8

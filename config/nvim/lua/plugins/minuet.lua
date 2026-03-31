@@ -13,7 +13,7 @@ return {
       -- Delay before triggering completion (ms)
       debounce = 400,
       -- Max tokens to generate per completion
-      n_completions = 2,
+      n_completions = 1,
     })
   end,
 }

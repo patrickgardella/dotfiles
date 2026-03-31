@@ -14,9 +14,8 @@ return {
 
   config = function()
     require("mason-lspconfig").setup({
-      ensure_installed = { -- If you enable it here, don't enable it in lspconfig below!
-      },
-      automatic_enable = false, --disable
+      ensure_installed = { "lua_ls", "jsonls", "yamlls" },
+      -- automatic_enable = false, --disable
     })
   end
 }

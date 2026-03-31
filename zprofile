@@ -12,3 +12,8 @@ fi
 [ -d "$HOME/.dotnet/tools" ] && export PATH="$PATH:$HOME/.dotnet/tools"
 
 export PATH="$PATH:$HOME/.local/bin"
+
+# Added by Obsidian
+if [[ "$(uname)" == "Darwin" ]]; then
+  export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
+fi

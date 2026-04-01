@@ -9,8 +9,9 @@ return {
         rust     = { "rustfmt" },
         bash     = { "shfmt" },
         sh       = { "shfmt" },
-        yaml     = { "prettier" },
-        markdown = { "prettier" },
+        yaml     = { "prettierd" },
+        markdown = { "prettierd" },
+        json     = { "prettierd" },
       },
       format_on_save = {
         timeout_ms = 500,

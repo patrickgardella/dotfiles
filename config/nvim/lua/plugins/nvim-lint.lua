@@ -9,6 +9,7 @@ return {
         json = { 'jsonlint' },
         lua = { 'luacheck' },
         yaml = { 'yamllint' },
+        json = { 'jsonlint' },
       }
       vim.api.nvim_create_autocmd({ "BufWritePost" }, {
         callback = function()

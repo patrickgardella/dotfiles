@@ -46,13 +46,6 @@ starship_precmd_user_func="set_win_title"
 # . /usr/local/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
 eval "$(starship init zsh)"
 
-# Configure Github copilot
-if (( $+commands[gh] )); then
-  if gh extension list | grep -q "copilot"; then
-    eval "$(gh copilot alias -- zsh)"
-  fi 
-fi
-
 # Configure 1password cli completion
 if (( $+commands[op] )); then
     eval "$(op completion zsh)"; compdef _op op

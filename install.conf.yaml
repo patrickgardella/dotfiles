@@ -53,11 +53,19 @@
       if: 'command -v wget >/dev/null 2>&1'
 
     # Cross-platform tools (no guard needed)
-    ~/.config/starship.toml: config/starship.toml
-    ~/.config/nvim:
-      path: config/nvim
-      force: false
     ~/.vale.ini: vale.ini
+    ~/.config/starship.toml: config/starship.toml
+    ~/.config/starship: config/starship
+    ~/.config/nvim: config/nvim
+    ~/.config/hypr: config/hypr
+    ~/.config/hyprpaper: config/hyprpaper
+    ~/.config/swaylock: config/swaylock
+    ~/.config/rofi: config/rofi
+    ~/.config/mako: config/mako
+    ~/.config/waybar: config/waybar
+    ~/.config/gtk-3.0: config/gtk-3.0
+    ~/.config/gtk-4.0: config/gtk-4.0
+
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

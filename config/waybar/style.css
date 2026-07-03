@@ -1,0 +1,39 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "FiraCode Nerd Font", "Noto Sans", sans-serif;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(30, 30, 30, 0.9);
+    color: #ffffff;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: #888888;
+}
+
+#workspaces button.active {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#clock, #pulseaudio, #network, #battery, #tray {
+    padding: 0 10px;
+}
+
+#battery.charging {
+    color: #00ff99;
+}
+
+#battery.warning:not(.charging) {
+    color: #ff8800;
+}
+
+#battery.critical:not(.charging) {
+    color: #ff3333;
+}

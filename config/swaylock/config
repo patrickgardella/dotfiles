@@ -1,0 +1,20 @@
+color=11111b
+
+ring-color=cdd6f4
+key-hl-color=89b4fa
+line-color=11111b
+inside-color=11111b
+separator-color=585b70
+
+ring-ver-color=a6e3a1
+inside-ver-color=11111b
+line-ver-color=a6e3a1
+
+ring-wrong-color=f38ba8
+inside-wrong-color=11111b
+line-wrong-color=f38ba8
+
+indicator-radius=100
+indicator-thickness=8
+
+font=FiraCode Nerd Font

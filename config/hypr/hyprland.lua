@@ -9,7 +9,10 @@ hl.monitor({
 -- Autostart
 hl.on("hyprland.start", function()
   hl.exec_cmd("waybar")
-  hl.exec_cmd("hyprpaper")
+  hl.exec_cmd("hypridle")
+  hl.exec_cmd("nm-applet")
+  hl.exec_cmd("/usr/lib/hyprpolkitagent/hyprpolkitagent")
+  hl.exec_cmd("~/.config/hypr/scripts/wallpaper-cycle.sh")
   hl.exec_cmd("mako")
 end)
 
@@ -38,10 +41,20 @@ hl.config({
   },
   decoration = {
     rounding = 10,
+    dim_inactive = true,
+    dim_strength = 0.2,
     blur = {
       enabled = true,
       size    = 3,
       passes  = 1,
+      new_optimizations = true,
+      xray   = true,
+    },
+    shadow = {
+      enabled = true,
+      range   = 8,
+      render_power = 3,
+      color   = "rgba(000000ee)",
     },
   },
 })
@@ -89,6 +102,7 @@ hl.bind(mainMod .. " + S", hl.dsp.exec_cmd('grim -g "$(slurp)" ~/Pictures/screen
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("google-chrome-stable"))
 hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("wlogout"))
 -- hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("swaylock"))
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.config/hypr/scripts/wallpaper-cycle.sh"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("pcmanfm-qt"))
 
 -- Workspace switching

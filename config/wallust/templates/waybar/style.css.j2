@@ -7,23 +7,23 @@
 }
 
 window#waybar {
-    background: #1F2020;
-    color: #F0EBDD;
+    background: {{ background }};
+    color: {{ foreground }};
 }
 
 #workspaces button {
     padding: 0 5px;
     background: transparent;
-    color: #F0EBDD;
+    color: {{ foreground }};
 }
 
 #workspaces button.active {
-    color: #F0EBDD;
+    color: {{ foreground }};
     background: rgba(255, 255, 255, 0.15);
 }
 
 #workspaces button:hover {
-    background: rgba(101, 89, 81, 0.27);
+    background: {{ color4 | rgba(0.27) }};
 }
 
 #clock, #custom-weather, #pulseaudio, #cpu, #memory, #temperature, #tray {
@@ -31,25 +31,25 @@ window#waybar {
 }
 
 #clock, #custom-weather {
-    color: #F0EBDD;
+    color: {{ foreground }};
 }
 
 #cpu, #memory, #temperature {
-    color: #F0EBDD;
+    color: {{ foreground }};
 }
 
 #pulseaudio {
-    color: #F0EBDD;
+    color: {{ foreground }};
 }
 
 #pulseaudio.muted {
-    color: #F0EBDD;
+    color: {{ foreground }};
 }
 
 #cpu.warning, #memory.warning, #temperature.warning {
-    color: #252423;
+    color: {{ color3 }};
 }
 
 #cpu.critical, #memory.critical, #temperature.critical {
-    color: #1D1D1D;
+    color: {{ color1 }};
 }

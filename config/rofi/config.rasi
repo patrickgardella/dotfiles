@@ -3,11 +3,11 @@
 }
 
 window {
-    background-color: #070007;
+    background-color: #16141A;
     border: 2px;
-    border-color: #788DAE;
+    border-color: #8E5162;
     border-radius: 8px;
-    text-color: #DEE8F7;
+    text-color: #FADCD1;
 }
 
 mainbox {
@@ -17,7 +17,7 @@ mainbox {
 }
 
 inputbar {
-    background-color: #8B95A5;
+    background-color: #A7897F;
     border-radius: 6px;
     padding: 6px;
     spacing: 8px;
@@ -25,12 +25,12 @@ inputbar {
 }
 
 prompt {
-    text-color: #788DAE;
+    text-color: #8E5162;
     padding: 0 8px 0 0;
 }
 
 entry {
-    text-color: #DEE8F7;
+    text-color: #FADCD1;
 }
 
 listview {
@@ -46,16 +46,16 @@ element {
 
 element normal {
     background-color: transparent;
-    text-color: #DEE8F7;
+    text-color: #FADCD1;
 }
 
 element alternate {
-    background-color: #070007;
+    background-color: #16141A;
 }
 
 element selected {
-    background-color: #788DAE;
-    text-color: #070007;
+    background-color: #8E5162;
+    text-color: #16141A;
 }
 
 element-icon {

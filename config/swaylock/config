@@ -1,20 +1,20 @@
-color=11111b
-
-ring-color=cdd6f4
-key-hl-color=89b4fa
-line-color=11111b
-inside-color=11111b
-separator-color=585b70
-
-ring-ver-color=a6e3a1
-inside-ver-color=11111b
-line-ver-color=a6e3a1
-
-ring-wrong-color=f38ba8
-inside-wrong-color=11111b
-line-wrong-color=f38ba8
-
-indicator-radius=100
+font=FiraCode Nerd Font
+indicator-radius=80
 indicator-thickness=8
 
-font=FiraCode Nerd Font
+color=#070007
+inside-color=#070007
+inside-clear-color=#4A553A
+inside-ver-color=#788DAE
+inside-wrong-color=#4A553A
+key-hl-color=#788DAE
+bs-hl-color=#4A553A
+ring-color=#8B95A5
+ring-clear-color=#4A553A
+ring-ver-color=#788DAE
+ring-wrong-color=#4A553A
+line-color=#070007
+line-clear-color=#4A553A
+line-ver-color=#788DAE
+line-wrong-color=#4A553A
+separator-color=#070007

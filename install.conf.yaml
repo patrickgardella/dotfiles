@@ -65,7 +65,8 @@
     ~/.config/waybar: config/waybar
     ~/.config/gtk-3.0: config/gtk-3.0
     ~/.config/gtk-4.0: config/gtk-4.0
-
+    ~/.config/wallust: config/wallust
+    ~/.config/wlogout: config/wlogout
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

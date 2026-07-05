@@ -9,6 +9,7 @@ hl.monitor({
 -- Autostart
 hl.on("hyprland.start", function()
   hl.exec_cmd("waybar")
+  hl.exec_cmd("hyprpaper")
   hl.exec_cmd("hypridle")
   hl.exec_cmd("nm-applet")
   hl.exec_cmd("/usr/lib/hyprpolkitagent/hyprpolkitagent")
@@ -24,6 +25,9 @@ hl.config({
     kb_model           = "",
     kb_options         = "",
     numlock_by_default = true,
+    touchpad = {
+      natural_scroll = true,
+    },
   },
 })
 
@@ -101,7 +105,7 @@ hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("rofi -show drun"))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd('grim -g "$(slurp)" ~/Pictures/screenshot-$(date +%F-%T).png'))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("google-chrome-stable"))
 hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("wlogout"))
--- hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("swaylock"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(os.getenv("HOME") .. "/.config/hypr/scripts/wallpaper-cycle.sh"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("pcmanfm-qt"))
 

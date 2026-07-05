@@ -3,7 +3,7 @@
     "position": "top",
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock", "custom/weather"],
-    "modules-right": ["cpu", "memory", "temperature", "pulseaudio", "tray"],
+    "modules-right": ["cpu", "memory", "temperature", "pulseaudio", "battery", "tray"],
     "clock": {
         "format": "{:%H:%M  %a %b %d}",
         "tooltip-format": "{:%Y-%m-%d %H:%M}"
@@ -31,6 +31,17 @@
         "exec": "~/.config/waybar/scripts/weather.sh",
         "interval": 600,
         "return-type": "json"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰂄 {capacity}%",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{timeTo}\n{power}W"
     },
     "tray": {
         "icon-size": 16,

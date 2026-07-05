@@ -1,6 +1,7 @@
 #!/bin/bash
 
-CITY="Louisville,US"
+LAT="38.2527"
+LON="-85.7585"
 CACHE_FILE="/tmp/weather.cache"
 CACHE_MAX_AGE=600
 
@@ -22,7 +23,7 @@ if [ -f "$CACHE_FILE" ]; then
 fi
 
 # Fetch weather
-response=$(curl -sf "https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${OPENWEATHER_API_KEY}&units=imperial")
+response=$(curl -sf "https://api.openweathermap.org/data/2.5/weather?lat=${LAT}&lon=${LON}&appid=${OPENWEATHER_API_KEY}&units=imperial")
 if [ -z "$response" ]; then
     if [ -f "$CACHE_FILE" ]; then
         cat "$CACHE_FILE"

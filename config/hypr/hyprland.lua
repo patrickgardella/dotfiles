@@ -115,12 +115,15 @@ hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(os.getenv("HOME") .. "/.config/hypr/scripts/wallpaper-cycle.sh"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("pcmanfm-qt"))
 
+<<<<<<< HEAD
 -- Brightness
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set +5%"))
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"))
 hl.bind(mainMod .. " + F5", hl.dsp.exec_cmd("brightnessctl set +5%"))
 hl.bind(mainMod .. " + F6", hl.dsp.exec_cmd("brightnessctl set 5%-"))
 
+=======
+>>>>>>> f84d809e305b1f14904bf54ca764e7879b282e0a
 -- Workspace switching
 for i = 1, 9 do
   hl.bind(mainMod .. " + " .. i, hl.dsp.focus({ workspace = i }))

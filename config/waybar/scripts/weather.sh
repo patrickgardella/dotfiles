@@ -17,6 +17,7 @@ if [ -z "$OPENWEATHER_API_KEY" ]; then
     exit 0
 fi
 
+# Serve cache if fresh
 if [ -f "$CACHE_FILE" ]; then
     cache_age=$(($(date +%s) - $(stat -c %Y "$CACHE_FILE" 2>/dev/null)))
     if [ "$cache_age" -lt "$CACHE_MAX_AGE" ] 2>/dev/null; then
@@ -25,6 +26,7 @@ if [ -f "$CACHE_FILE" ]; then
     fi
 fi
 
+# Fetch weather
 response=$(curl -sf "https://api.openweathermap.org/data/2.5/weather?lat=${LAT}&lon=${LON}&appid=${OPENWEATHER_API_KEY}&units=imperial")
 if [ -z "$response" ]; then
     if [ -f "$CACHE_FILE" ]; then

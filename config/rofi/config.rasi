@@ -3,21 +3,7 @@
 }
 
 window {
-    background-color: #000100;
-    border: 2px;
-    border-color: #31516C;
-    border-radius: 8px;
-    text-color: #E7DAD3;
-}
-
-mainbox {
-    children: [ inputbar, listview ];
-    padding: 8px;
-    spacing: 8px;
-}
-
-inputbar {
-    background-color: #948881;
+    background-color: #9F9795;
     border-radius: 6px;
     padding: 6px;
     spacing: 8px;
@@ -25,12 +11,12 @@ inputbar {
 }
 
 prompt {
-    text-color: #31516C;
+    text-color: #A4918D;
     padding: 0 8px 0 0;
 }
 
 entry {
-    text-color: #E7DAD3;
+    text-color: #F2E9E8;
 }
 
 listview {
@@ -46,16 +32,16 @@ element {
 
 element normal {
     background-color: transparent;
-    text-color: #E7DAD3;
+    text-color: #F2E9E8;
 }
 
 element alternate {
-    background-color: #000100;
+    background-color: #000001;
 }
 
 element selected {
-    background-color: #31516C;
-    text-color: #000100;
+    background-color: #A4918D;
+    text-color: #000001;
 }
 
 element-icon {

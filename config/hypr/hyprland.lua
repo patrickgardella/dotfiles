@@ -25,8 +25,11 @@ hl.config({
     kb_model           = "",
     kb_options         = "",
     numlock_by_default = true,
-    touchpad = {
-      natural_scroll = true,
+    touchpad           = {
+      natural_scroll       = true,
+      disable_while_typing = true,
+      tap_to_click         = false,
+      clickfinger_behavior = false,
     },
   },
 })
@@ -108,6 +111,12 @@ hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("wlogout"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(os.getenv("HOME") .. "/.config/hypr/scripts/wallpaper-cycle.sh"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("pcmanfm-qt"))
+
+-- Brightness
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set +5%"))
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"))
+hl.bind(mainMod .. " + F5", hl.dsp.exec_cmd("brightnessctl set +5%"))
+hl.bind(mainMod .. " + F6", hl.dsp.exec_cmd("brightnessctl set 5%-"))
 
 -- Workspace switching
 for i = 1, 9 do

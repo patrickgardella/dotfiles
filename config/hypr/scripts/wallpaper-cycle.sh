@@ -1,4 +1,10 @@
 #!/bin/bash
+
+for i in {1..10}; do
+    hyprctl hyprpaper list 2>/dev/null && break
+    sleep 0.5
+done
+
 WALLDIR="$HOME/Pictures/wallpapers"
 if [ ! -d "$WALLDIR" ] || [ -z "$(ls -A "$WALLDIR" 2>/dev/null)" ]; then
     exit 0

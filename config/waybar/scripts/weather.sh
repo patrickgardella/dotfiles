@@ -1,19 +1,22 @@
 #!/bin/bash
 
+export PATH="/usr/local/bin:/usr/bin:/bin:$PATH"
+
 LAT="38.2527"
 LON="-85.7585"
 CACHE_FILE="/tmp/weather.cache"
 CACHE_MAX_AGE=600
+ENV_FILE="/home/patrick/.config/waybar/scripts/weather.env"
 
-# Source API key
-source ~/.zshrc.local 2>/dev/null
+if [ -f "$ENV_FILE" ]; then
+    source "$ENV_FILE"
+fi
 
 if [ -z "$OPENWEATHER_API_KEY" ]; then
     echo '{"text": "no key", "tooltip": "OPENWEATHER_API_KEY not set"}'
     exit 0
 fi
 
-# Serve cache if fresh
 if [ -f "$CACHE_FILE" ]; then
     cache_age=$(($(date +%s) - $(stat -c %Y "$CACHE_FILE" 2>/dev/null)))
     if [ "$cache_age" -lt "$CACHE_MAX_AGE" ] 2>/dev/null; then
@@ -22,7 +25,6 @@ if [ -f "$CACHE_FILE" ]; then
     fi
 fi
 
-# Fetch weather
 response=$(curl -sf "https://api.openweathermap.org/data/2.5/weather?lat=${LAT}&lon=${LON}&appid=${OPENWEATHER_API_KEY}&units=imperial")
 if [ -z "$response" ]; then
     if [ -f "$CACHE_FILE" ]; then

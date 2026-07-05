@@ -11,7 +11,7 @@ if [ ! -d "$WALLDIR" ] || [ -z "$(ls -A "$WALLDIR" 2>/dev/null)" ]; then
 fi
 WALLS=("$WALLDIR"/*)
 RAND="${WALLS[$RANDOM % ${#WALLS[@]}]}"
-hyprctl hyprpaper preload "$RAND"
+#hyprctl hyprpaper preload "$RAND"
 hyprctl hyprpaper wallpaper ",$RAND"
 for img in "${WALLS[@]}"; do
     [ "$img" != "$RAND" ] && hyprctl hyprpaper unload "$img" 2>/dev/null

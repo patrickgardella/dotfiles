@@ -32,6 +32,9 @@ hl.config({
       clickfinger_behavior = false,
     },
   },
+  misc = {
+    disable_splash_rendering = true
+  }
 })
 
 -- Look and feel

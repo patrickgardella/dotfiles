@@ -12,10 +12,10 @@
       if: '[ "$(uname -s)" = "Linux" ] && command -v bash >/dev/null 2>&1'
     ~/.bash_profile:
       path: bash_profile
-      if: 'command -v bash >/dev/null 2>&1'
+      if: "command -v bash >/dev/null 2>&1"
     ~/.bashrc:
       path: bashrc
-      if: 'command -v bash >/dev/null 2>&1'
+      if: "command -v bash >/dev/null 2>&1"
 
     # Profile — POSIX shells on Unix only
     ~/.profile:
@@ -25,32 +25,32 @@
     # Zsh — guard on zsh being present
     ~/.zshrc:
       path: zshrc
-      if: 'command -v zsh >/dev/null 2>&1'
+      if: "command -v zsh >/dev/null 2>&1"
     ~/.zprofile:
       path: zprofile
-      if: 'command -v zsh >/dev/null 2>&1'
+      if: "command -v zsh >/dev/null 2>&1"
     ~/.zsh_plugins:
       path: zsh_plugins
-      if: 'command -v zsh >/dev/null 2>&1'
+      if: "command -v zsh >/dev/null 2>&1"
 
     # Tmux — guard on tmux being present
     ~/.tmux.conf:
       path: tmux.conf
-      if: 'command -v tmux >/dev/null 2>&1'
+      if: "command -v tmux >/dev/null 2>&1"
 
     # Vim — guard on vim being present
     ~/.vimrc:
       path: vimrc
-      if: 'command -v vim >/dev/null 2>&1'
+      if: "command -v vim >/dev/null 2>&1"
     ~/.vim/pack:
       path: .vim/pack
       force: false
-      if: 'command -v vim >/dev/null 2>&1'
+      if: "command -v vim >/dev/null 2>&1"
 
     # Wget — guard on wget being present
     ~/.wgetrc:
       path: wgetrc
-      if: 'command -v wget >/dev/null 2>&1'
+      if: "command -v wget >/dev/null 2>&1"
 
     # Cross-platform tools (no guard needed)
     ~/.vale.ini: vale.ini
@@ -60,8 +60,8 @@
     ~/.config/hypr: config/hypr
     ~/.config/hyprpaper: config/hyprpaper
     ~/.config/swaylock: config/swaylock
-    ~/.config/rofi: config/rofi
-    ~/.config/mako: config/mako
+    #~/.config/rofi: config/rofi
+    #~/.config/mako: config/mako
     ~/.config/waybar: config/waybar
     ~/.config/gtk-3.0: config/gtk-3.0
     ~/.config/gtk-4.0: config/gtk-4.0

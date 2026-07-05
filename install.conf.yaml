@@ -58,7 +58,6 @@
     ~/.config/starship: config/starship
     ~/.config/nvim: config/nvim
     ~/.config/hypr: config/hypr
-    ~/.config/swaylock: config/swaylock
     ~/.config/waybar: config/waybar
     ~/.config/gtk-3.0: config/gtk-3.0
     ~/.config/gtk-4.0: config/gtk-4.0

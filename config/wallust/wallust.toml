@@ -6,10 +6,6 @@ palette = "dark16"
 template = "/home/patrick/.config/wallust/templates/waybar/style.css.j2"
 target = "/home/patrick/.config/waybar/style.css"
 
-[templates.swaylock]
-template = "/home/patrick/.config/wallust/templates/swaylock/config.j2"
-target = "/home/patrick/.config/swaylock/config"
-
 [templates.mako]
 template = "/home/patrick/.config/wallust/templates/mako/config.j2"
 target = "/home/patrick/.config/mako/config"

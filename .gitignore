@@ -67,3 +67,5 @@ config/nvim/lazy-lock.json
 
 # AI files 
 .claude/*
+
+config/waybar/scripts/weather.env

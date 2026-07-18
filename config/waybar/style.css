@@ -42,6 +42,7 @@ temperature.critical {
 #memory,
 #temperature,
 #pulseaudio,
+#custom-pacman,
 #custom-weather {
     color: @color5; /* color5 */
     background-color: @background; /* background */

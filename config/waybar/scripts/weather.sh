@@ -58,9 +58,10 @@ esac
 temp_rounded=$(printf "%.0f" "$temp")
 capitalize() { echo "$(tr '[:lower:]' '[:upper:]' <<< "${1:0:1}")${1:1}"; }
 desc_cap=$(capitalize "$desc")
+last_fetched=$(date '+%Y-%m-%d %H:%M:%S')
 
 output=$(cat <<EOF
-{"text": "${icon_char} ${temp_rounded}°F", "tooltip": "${desc_cap}\nHumidity: ${humidity}%\nWind: ${wind} mph"}
+{"text": "${icon_char} ${temp_rounded}°F", "tooltip": "${desc_cap}\nHumidity: ${humidity}%\nWind: ${wind} mph\nLast updated: ${last_fetched}"}
 EOF
 )
 

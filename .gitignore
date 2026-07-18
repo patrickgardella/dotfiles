@@ -67,4 +67,7 @@ config/nvim/lazy-lock.json
 
 # AI files 
 .claude/*
+
+# hypr files
 config/waybar/scripts/weather.env
+config/waybar/colors.css

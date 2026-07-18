@@ -13,6 +13,9 @@
     "cpu",
     "memory",
     "temperature",
+    "temperature#cpu",
+    "temperature#gpu",
+    "temperature#nvme",
     "pulseaudio",
     "battery",
     "tray"
@@ -41,8 +44,35 @@
     "format-alt": "{used:0.1f}GiB / {total:0.1f}GiB",
     "interval": 10
   },
-  "temperature": {
-    "interval": 30
+  "temperature#cpu": {
+    "hwmon-path": [
+      "/sys/class/hwmon/hwmon3/temp1_input"
+    ],
+    "warning-threshold": 85,
+    "critical-threshold": 95,
+    "format": " {temperatureC}°C",
+    "format-warning": " {temperatureC}°C",
+    "format-critical": " {temperatureC}°C"
+  },
+  "temperature#gpu": {
+    "hwmon-path": [
+      "/sys/class/hwmon/hwmon2/temp2_input"
+    ],
+    "warning-threshold": 95,
+    "critical-threshold": 105,
+    "format": " {temperatureC}°C",
+    "format-warning": " {temperatureC}°C",
+    "format-critical": " {temperatureC}°C"
+  },
+  "temperature#nvme": {
+    "hwmon-path": [
+      "/sys/class/hwmon/hwmon0/temp1_input"
+    ],
+    "warning-threshold": 55,
+    "critical-threshold": 70,
+    "format": " {temperatureC}°C",
+    "format-warning": " {temperatureC}°C",
+    "format-critical": " {temperatureC}°C"
   },
   "hyprland/workspaces": {
     "format": "{icon}",

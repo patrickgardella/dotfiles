@@ -29,6 +29,14 @@ window#waybar {
     margin-right: 12px;    
 }
 
+temperature.warning {
+    color: #f9e2af;
+}
+temperature.critical {
+    color: #f38ba8;
+    font-weight: bold;
+}
+
 #battery,
 #cpu,
 #memory,

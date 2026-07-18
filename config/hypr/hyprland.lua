@@ -68,6 +68,11 @@ hl.config({
 			color = "rgba(000000ee)",
 		},
 	},
+	dwindle = {
+		force_split = 2, -- split on the right side only
+		preserve_split = true, -- keeps things in the same orientation
+		smart_split = false, -- setting this to true splits windows wherever your mouse is
+	},
 })
 
 -- Animations
@@ -102,16 +107,17 @@ hl.env("LIBGL_ALWAYS_SOFTWARE", "1")
 
 -- Keybinds
 local mainMod = "SUPER"
-hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd("foot"))
-hl.bind(mainMod .. " + C", hl.dsp.window.close())
+hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exit())
-hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
+hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
+--hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + J", function()
 	hl.dispatch("layoutmsg", "togglesplit")
 end)
-hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("foot"))
+hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("command -v ghostty >/dev/null 2>&1 && exec ghostty || exec foot"))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("rofi -show drun"))
+hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("killall waybar; exec waybar "))
+
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd('grim -g "$(slurp)" ~/Pictures/screenshot-$(date +%F-%T).png'))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("google-chrome-stable"))
 hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("wlogout"))

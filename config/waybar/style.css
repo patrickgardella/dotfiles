@@ -1,55 +1,64 @@
+@import url("colors.css");
+
 * {
-    border: none;
-    border-radius: 0;
-    font-family: "FiraCode Nerd Font", "Noto Sans", sans-serif;
-    font-size: 13px;
-    min-height: 0;
+    font-family: 'FiraCode Nerd Font', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 10px;
 }
 
 window#waybar {
-    background: #1F2020;
-    color: #F0EBDD;
-}
-
-#workspaces button {
-    padding: 0 5px;
-    background: transparent;
-    color: #F0EBDD;
+    background-color: transparent;
+    color: @background;
 }
 
 #workspaces button.active {
-    color: #F0EBDD;
-    background: rgba(255, 255, 255, 0.15);
+    color: @foreground;
 }
 
-#workspaces button:hover {
-    background: rgba(101, 89, 81, 0.27);
+#workspaces {
+    background-color: @background;
+    padding: 0 5.6px 0 0;
 }
 
-#clock, #custom-weather, #pulseaudio, #cpu, #memory, #temperature, #tray {
-    padding: 0 10px;
+.modules-left {
+    margin-left: 12px;    
 }
 
-#clock, #custom-weather {
-    color: #F0EBDD;
+.modules-right {
+    margin-right: 12px;    
 }
 
-#cpu, #memory, #temperature {
-    color: #F0EBDD;
+#battery,
+#cpu,
+#memory,
+#temperature,
+#pulseaudio,
+#custom-weather {
+    color: @color5; /* color5 */
+    background-color: @background; /* background */
+    margin: 0 15px 0 0px;
+    padding: 0 15px 0 15px; /* top, right, bottom, left */
+}
+
+#network {
+    color: @color2; /* color2 */
+    background-color: @background; /* background */
+    margin: 0 0px 0 0px;
+    padding: 0 15px 0 15px; /* top, right, bottom, left */
+}
+
+#clock {
+    color: @color3; /* color3 */
+    background-color: @background; /* background */
+    margin: 0 15px 0 0;
+    padding: 0 15px 0 15px;
+}
+
+#network {
+    color: @color4; /* color4 */
 }
 
 #pulseaudio {
-    color: #F0EBDD;
-}
-
-#pulseaudio.muted {
-    color: #F0EBDD;
-}
-
-#cpu.warning, #memory.warning, #temperature.warning {
-    color: #252423;
-}
-
-#cpu.critical, #memory.critical, #temperature.critical {
-    color: #1D1D1D;
+    color: @color5; /* color5 */
 }

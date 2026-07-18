@@ -1,50 +1,95 @@
 {
-    "layer": "top",
-    "position": "top",
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["clock", "custom/weather"],
-    "modules-right": ["cpu", "memory", "temperature", "pulseaudio", "battery", "tray"],
-    "clock": {
-        "format": "{:%H:%M  %a %b %d}",
-        "tooltip-format": "{:%Y-%m-%d %H:%M}"
+  "layer": "top",
+  "position": "top",
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock",
+    "custom/weather",
+    "custom/pacman"
+  ],
+  "modules-right": [
+    "cpu",
+    "memory",
+    "temperature",
+    "pulseaudio",
+    "battery",
+    "tray"
+  ],
+  "clock": {
+    "format": "{:%H:%M  %a %b %d}",
+    "tooltip-format": "{:%Y-%m-%d %H:%M}"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "MUTED",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ],
+    "on-click": "pavucontrol"
+  },
+  "cpu": {
+    "format": "CPU: {usage}%",
+    "format-alt": "{avg_frequency}GHz",
+    "interval": 5
+  },
+  "memory": {
+    "format": "Mem: {percentage}%",
+    "format-alt": "{used:0.1f}GiB / {total:0.1f}GiB",
+    "interval": 10
+  },
+  "temperature": {
+    "interval": 30
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "urgent": "󰀨",
+      "active": "",
+      "default": ""
     },
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-muted": "MUTED",
-        "format-icons": ["", "", ""],
-        "on-click": "pamixer -t"
+    "sort-by-number": true
+  },
+  "custom/pacman": {
+    "format": " {}   ",
+    "interval": "once",
+    "exec": "checkupdates | wc -l",
+    "on-click": "",
+    "signal": 8
+  },
+  "custom/weather": {
+    "exec": "~/.config/waybar/scripts/weather.sh",
+    "interval": 600,
+    "return-type": "json"
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
     },
-    "cpu": {
-        "format": "{usage}%",
-        "format-alt": "{avg_frequency}GHz",
-        "interval": 5
-    },
-    "memory": {
-        "format": "{percentage}%",
-        "format-alt": "{used:0.1f}GiB / {total:0.1f}GiB",
-        "interval": 10
-    },
-    "temperature": {
-        "interval": 30
-    },
-    "custom/weather": {
-        "exec": "~/.config/waybar/scripts/weather.sh",
-        "interval": 600,
-        "return-type": "json"
-    },
-    "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon} {capacity}%",
-        "format-charging": "󰂄 {capacity}%",
-        "format-plugged": "󰂄 {capacity}%",
-        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-        "tooltip-format": "{timeTo}\n{power}W"
-    },
-    "tray": {
-        "icon-size": 16,
-        "spacing": 4
-    }
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰂄 {capacity}%",
+    "format-icons": [
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ],
+    "tooltip-format": "{timeTo}\n{power}W"
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 4
+  }
 }

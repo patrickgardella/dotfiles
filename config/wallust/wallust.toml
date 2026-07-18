@@ -1,0 +1,3 @@
+[templates]
+waybar.template = "waybar-colors.css"
+waybar.target = "~/.config/waybar/colors.css"

@@ -122,9 +122,6 @@ hl.window_rule({
 -- Environment
 hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")
 hl.env("XCURSOR_SIZE", "24")
-hl.env("WLR_RENDERER_ALLOW_SOFTWARE", "1")
-hl.env("WLR_NO_HARDWARE_CURSORS", "1")
-hl.env("LIBGL_ALWAYS_SOFTWARE", "1")
 
 -- Keybinds
 local mainMod = "SUPER"

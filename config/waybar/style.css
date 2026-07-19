@@ -12,15 +12,6 @@ window#waybar {
     color: @background;
 }
 
-#workspaces button.active {
-    color: @foreground;
-}
-
-#workspaces {
-    background-color: @background;
-    padding: 0 5.6px 0 0;
-}
-
 .modules-left {
     margin-left: 12px;    
 }
@@ -29,11 +20,11 @@ window#waybar {
     margin-right: 12px;    
 }
 
-temperature.warning {
-    color: #f9e2af;
+#temperature.warning {
+    color: @color3;
 }
-temperature.critical {
-    color: #f38ba8;
+#temperature.critical {
+    color: @color1;
     font-weight: bold;
 }
 
@@ -64,10 +55,71 @@ temperature.critical {
     padding: 0 15px 0 15px;
 }
 
-#network {
-    color: @color4; /* color4 */
+#workspaces {
+    margin: 4px 6px;
+    padding: 2px;
+    border-radius: 12px;
+    background-color: alpha(@background, 0.4);
 }
 
-#pulseaudio {
-    color: @color5; /* color5 */
+#workspaces button {
+    all: unset;
+    min-width: 22px;
+    min-height: 22px;
+    margin: 2px 3px;
+    padding: 0 6px;
+    border-radius: 8px;
+    color: @foreground;
+    background-color: alpha(@foreground, 0.08);
+    font-weight: bold;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#workspaces button:hover {
+    background-color: alpha(@foreground, 0.18);
+}
+
+#workspaces button.active {
+    background-color: @color4;
+    color: @background;
+}
+
+#workspaces button.visible {
+    background-color: alpha(@color4, 0.35);
+}
+
+#workspaces button.empty {
+    color: alpha(@foreground, 0.35);
+    background-color: transparent;
+}
+
+#workspaces button.persistent {
+    color: @foreground;
+}
+
+#workspaces button.special {
+    color: @color5;
+    background-color: alpha(@color5, 0.15);
+}
+
+#workspaces button.urgent {
+    background-color: @color1;
+    color: @background;
+}
+
+#tray {
+    margin: 0 8px;
+    padding: 2px 6px;
+    border-radius: 8px;
+    background-color: alpha(@foreground, 0.08);
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: alpha(@color1, 0.25);
+    border-radius: 6px;
 }

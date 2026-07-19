@@ -12,12 +12,12 @@
   "modules-right": [
     "cpu",
     "memory",
-    "temperature",
     "temperature#cpu",
     "temperature#gpu",
     "temperature#nvme",
     "pulseaudio",
     "battery",
+    "network",
     "tray"
   ],
   "clock": {
@@ -75,14 +75,11 @@
     "format-critical": " {temperatureC}°C"
   },
   "hyprland/workspaces": {
-    "format": "{icon}",
-    "on-click": "activate",
-    "format-icons": {
-      "urgent": "󰀨",
-      "active": "",
-      "default": ""
-    },
-    "sort-by-number": true
+    "format": "{id}",
+    "all-outputs": true,
+    "move-to-monitor": true,
+    "persistent-only": false,
+    "sort-by": "number"
   },
   "custom/pacman": {
     "format": " {}   ",
@@ -119,7 +116,7 @@
     "tooltip-format": "{timeTo}\n{power}W"
   },
   "tray": {
-    "icon-size": 16,
+    "icon-size": 24,
     "spacing": 4
   }
 }

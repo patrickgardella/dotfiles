@@ -50,7 +50,7 @@
     ],
     "warning-threshold": 85,
     "critical-threshold": 95,
-    "format": " {temperatureC}°C",
+    "format": "CPU: {temperatureC}°C",
     "format-warning": " {temperatureC}°C",
     "format-critical": " {temperatureC}°C"
   },
@@ -60,7 +60,7 @@
     ],
     "warning-threshold": 95,
     "critical-threshold": 105,
-    "format": " {temperatureC}°C",
+    "format": "GPU: {temperatureC}°C",
     "format-warning": " {temperatureC}°C",
     "format-critical": " {temperatureC}°C"
   },
@@ -70,7 +70,7 @@
     ],
     "warning-threshold": 55,
     "critical-threshold": 70,
-    "format": " {temperatureC}°C",
+    "format": "NVME: {temperatureC}°C",
     "format-warning": " {temperatureC}°C",
     "format-critical": " {temperatureC}°C"
   },

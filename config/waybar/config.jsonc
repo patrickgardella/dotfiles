@@ -12,14 +12,20 @@
   "modules-right": [
     "cpu",
     "memory",
-    "temperature#cpu",
-    "temperature#gpu",
-    "temperature#nvme",
+    "group/temps",
     "pulseaudio",
     "battery",
     "network",
     "tray"
   ],
+  "group/temps": {
+    "orientation": "horizontal",
+    "modules": [
+      "temperature#cpu",
+      "temperature#gpu",
+      "temperature#nvme"
+    ]
+  },
   "clock": {
     "format": "{:%H:%M  %a %b %d}",
     "tooltip-format": "{:%Y-%m-%d %H:%M}"
@@ -50,9 +56,9 @@
     ],
     "warning-threshold": 85,
     "critical-threshold": 95,
-    "format": "CPU: {temperatureC}°C",
-    "format-warning": " {temperatureC}°C",
-    "format-critical": " {temperatureC}°C"
+    "format": "C: {temperatureC}°C",
+    "format-warning": "C: {temperatureC}°C",
+    "format-critical": "C: {temperatureC}°C"
   },
   "temperature#gpu": {
     "hwmon-path": [
@@ -60,9 +66,9 @@
     ],
     "warning-threshold": 95,
     "critical-threshold": 105,
-    "format": "GPU: {temperatureC}°C",
-    "format-warning": " {temperatureC}°C",
-    "format-critical": " {temperatureC}°C"
+    "format": "G: {temperatureC}°C",
+    "format-warning": "G: {temperatureC}°C",
+    "format-critical": "G: {temperatureC}°C"
   },
   "temperature#nvme": {
     "hwmon-path": [
@@ -70,9 +76,9 @@
     ],
     "warning-threshold": 55,
     "critical-threshold": 70,
-    "format": "NVME: {temperatureC}°C",
-    "format-warning": " {temperatureC}°C",
-    "format-critical": " {temperatureC}°C"
+    "format": "N: {temperatureC}°C",
+    "format-warning": "N: {temperatureC}°C",
+    "format-critical": "N: {temperatureC}°C"
   },
   "hyprland/workspaces": {
     "format": "{id}",

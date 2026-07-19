@@ -20,18 +20,37 @@ window#waybar {
     margin-right: 12px;    
 }
 
-#temperature.warning {
-    color: @color3;
+#temps {
+    background-color: @background;
+    margin: 0 15px 0 0;
+    padding: 0 15px 0 15px;
 }
-#temperature.critical {
-    color: @color1;
+
+#temps #temperature {
+    color: @color5;
+    background-color: transparent;
+    margin: 0;
+    padding: 0 8px;
+}
+
+#temperature.warning,
+#temperature-cpu.warning,
+#temperature-gpu.warning,
+#temperature-nvme.warning {
+    color: #FFA500;
+}
+
+#temperature.critical,
+#temperature-cpu.critical,
+#temperature-gpu.critical,
+#temperature-nvme.critical {
+    color: #FF0000;
     font-weight: bold;
 }
 
 #battery,
 #cpu,
 #memory,
-#temperature,
 #pulseaudio,
 #custom-pacman,
 #custom-weather {
@@ -127,7 +146,7 @@ window#waybar {
 }
 
 #tray > *:hover {
-    background-color: alpha(@backgroud, 0.3);
+    background-color: alpha(@background, 0.3);
 }
 
 #tray > .passive {

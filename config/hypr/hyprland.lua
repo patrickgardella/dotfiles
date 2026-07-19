@@ -119,12 +119,6 @@ hl.window_rule({
 	pin = true,
 })
 
-hl.window_rule({
-	name = "idle-inhibit-fullscreen",
-	match = { fullscreen = true },
-	idle_inhibit = true,
-})
-
 -- Environment
 hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")
 hl.env("XCURSOR_SIZE", "24")

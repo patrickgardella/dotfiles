@@ -118,5 +118,11 @@
   "tray": {
     "icon-size": 24,
     "spacing": 4
+  },
+  "network": {
+    "interval": 3,
+    "format-ethernet": "󰇚 {bandwidthDownBits} 󰕒 {bandwidthUpBits}",
+    "format-disconnected": "󰖪 Offline",
+    "tooltip-format-ethernet": "↓ {bandwidthDownBytes} ↑ {bandwidthUpBytes}"
   }
 }

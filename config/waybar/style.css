@@ -48,6 +48,10 @@ window#waybar {
     padding: 0 15px 0 15px; /* top, right, bottom, left */
 }
 
+#network.disconnected {
+    color: @color1;
+}
+
 #clock {
     color: @color3; /* color3 */
     background-color: @background; /* background */

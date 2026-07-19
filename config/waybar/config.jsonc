@@ -127,8 +127,8 @@
   },
   "network": {
     "interval": 3,
-    "format-ethernet": "󰇚 {bandwidthDownBits} 󰕒 {bandwidthUpBits}",
+    "format-ethernet": "{ifname}",
     "format-disconnected": "󰖪 Offline",
-    "tooltip-format-ethernet": "↓ {bandwidthDownBytes} ↑ {bandwidthUpBytes}"
+    "tooltip-format-ethernet": "󰇚 {bandwidthDownBits} 󰕒 {bandwidthUpBits}"
   }
 }

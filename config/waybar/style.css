@@ -122,12 +122,12 @@ window#waybar {
     padding: 2px 6px;
     margin: 0 2px;
     border-radius: 6px;
-    background-color: alpha(@foreground, 0.12);
+    background-color: transparent;
     transition: background-color 0.2s ease;
 }
 
 #tray > *:hover {
-    background-color: alpha(@foreground, 0.25);
+    background-color: alpha(@backgroud, 0.3);
 }
 
 #tray > .passive {

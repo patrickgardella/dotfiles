@@ -83,9 +83,9 @@
   },
   "custom/pacman": {
     "format": " {}   ",
-    "interval": "once",
+    "interval": "3600",
+    "on-click": "checkupdates",
     "exec": "checkupdates | wc -l",
-    "on-click": "",
     "signal": 8
   },
   "custom/weather": {

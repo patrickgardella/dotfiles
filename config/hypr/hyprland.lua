@@ -98,6 +98,33 @@ hl.animation({ leaf = "layersOut", enabled = true, speed = 1.5, bezier = "linear
 hl.animation({ leaf = "workspaces", enabled = true, speed = 3, bezier = "easeOutQuint", style = "slidefade 20%" })
 hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "easeOutQuint" })
 
+-- Window rules
+hl.window_rule({
+	name = "float-dialogs",
+	match = { class = "(1Password|pavucontrol|Nm-connection-editor|file-roller)" },
+	float = true,
+	center = true,
+})
+
+hl.window_rule({
+	name = "float-filemanager",
+	match = { class = "pcmanfm-qt" },
+	float = true,
+})
+
+hl.window_rule({
+	name = "pip",
+	match = { title = "Picture-in-Picture" },
+	float = true,
+	pin = true,
+})
+
+hl.window_rule({
+	name = "idle-inhibit-fullscreen",
+	match = { fullscreen = true },
+	idle_inhibit = true,
+})
+
 -- Environment
 hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")
 hl.env("XCURSOR_SIZE", "24")

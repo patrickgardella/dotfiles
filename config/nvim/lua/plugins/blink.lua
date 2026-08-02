@@ -1,7 +1,7 @@
 return {
   "saghen/blink.cmp",
   version = "*",
-  build = vim.loop.os_uname().sysname == "FreeBSD" and "cargo build --release" or nil,
+  build = vim.uv.os_uname().sysname == "FreeBSD" and "cargo build --release" or nil,
   opts = {
     keymap = { preset = "default" },
     fuzzy = {

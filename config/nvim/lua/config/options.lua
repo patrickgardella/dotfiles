@@ -32,7 +32,11 @@ vim.opt.swapfile = true -- To enable swap files
 vim.opt.backup = false -- To disable backup files
 vim.opt.writebackup = true -- To enable backup files until write is successful
 vim.opt.undofile = true -- To enable persistent undo files
-vim.opt.undodir = vim.fn.expand("~/.vim/undodir") -- To set the directory for undo files
+vim.opt.undodir = vim.fn.stdpath("data") .. "/undo" -- To set the directory for undo files
+local undodir = vim.fn.stdpath("data") .. "/undo"
+if vim.fn.isdirectory(undodir) == 0 then
+  vim.fn.mkdir(undodir, "p")
+end
 vim.opt.backspace = "indent,eol,start" -- To allow backspacing over everything in insert mode
 vim.opt.mouse:append("a") -- To enable mouse support in all modes
 --vim.opt.clipboard:append("unnamedplus") -- To use the system clipboard for copy/paste operations

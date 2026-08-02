@@ -17,5 +17,8 @@ return {
     require("mason-lspconfig").setup({
       ensure_installed = { "jsonls", "lua_ls" },
     })
+
+    -- rust-analyzer is installed via cargo, not mason, so enable it explicitly
+    vim.lsp.enable("rust_analyzer")
   end,
 }

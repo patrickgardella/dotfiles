@@ -122,6 +122,13 @@ hl.window_rule({
 	name = "float-steam",
 	match = { class = "^[Ss]team" },
 	float = true,
+	workspace = "3",
+})
+
+hl.window_rule({
+	name = "vmware-workspace",
+	match = { class = "^[Vv]mware" },
+	workspace = "2",
 })
 
 hl.window_rule({

@@ -113,6 +113,12 @@ hl.window_rule({
 })
 
 hl.window_rule({
+	name = "float-1password",
+	match = { class = "1password" },
+	float = true,
+})
+
+hl.window_rule({
 	name = "pip",
 	match = { title = "Picture-in-Picture" },
 	float = true,

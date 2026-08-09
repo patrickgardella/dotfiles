@@ -3,6 +3,7 @@ ignore = {
 }
 read_globals = {
   "vim",
+  "hl",
   "describe",
   "it",
   "assert"

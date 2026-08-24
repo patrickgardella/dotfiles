@@ -15,6 +15,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("/usr/lib/hyprpolkitagent/hyprpolkitagent")
 	hl.exec_cmd(os.getenv("HOME") .. "/.config/hypr/scripts/wallpaper-cycle.sh")
 	hl.exec_cmd("mako")
+	os.execute("gnome-keyring-daemon --start --components=secrets &")
 end)
 
 -- Input

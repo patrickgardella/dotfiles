@@ -17,6 +17,11 @@ return {
         timeout_ms = 500,
         lsp_format = "fallback",
       },
+      should_format = function(bufnr)
+        local excluded = "/Users/patrick.gardella/Library/CloudStorage/GoogleDrive-patrick.gardella@monstar-lab.com/Shared drives/ML_Americas/00_People & Ops/Compliance/2026 Compliance Standardization"
+        local path = vim.api.nvim_buf_get_name(bufnr)
+        return not vim.startswith(path, excluded)
+      end,
     })
   end,
 }

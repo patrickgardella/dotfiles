@@ -20,9 +20,9 @@ set backspace=indent,eol,start  " sane backspace in insert mode
 set hidden                      " switch buffers without saving
 set autoindent
 set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
 " Search
 set ignorecase          " case-insensitive search by default

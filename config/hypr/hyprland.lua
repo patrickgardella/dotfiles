@@ -8,7 +8,9 @@ hl.monitor({
 
 -- Autostart
 hl.on("hyprland.start", function()
-	hl.exec_cmd("waybar")
+	-- hl.exec_cmd("waybar")
+	hl.exec_cmd("systemctl --user restart waybar.service")
+	hl.exec_cmd("openrgb --server --startminimized --noautoconnect")
 	hl.exec_cmd("hyprpaper")
 	hl.exec_cmd("hypridle")
 	hl.exec_cmd("nm-applet")
@@ -70,9 +72,9 @@ hl.config({
 		},
 	},
 	dwindle = {
-		force_split = 2, -- split on the right side only
-		preserve_split = true, -- keeps things in the same orientation
-		smart_split = false, -- setting this to true splits windows wherever your mouse is
+		force_split = 0,
+		preserve_split = true,
+		smart_split = true,
 	},
 })
 
@@ -102,7 +104,7 @@ hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "easeOut
 -- Window rules
 hl.window_rule({
 	name = "float-dialogs",
-	match = { class = "(1Password|pavucontrol|Nm-connection-editor|file-roller)" },
+	match = { class = "(pavucontrol|Nm-connection-editor|file-roller)" },
 	float = true,
 	center = true,
 })
@@ -111,18 +113,25 @@ hl.window_rule({
 	name = "float-filemanager",
 	match = { class = "pcmanfm-qt" },
 	float = true,
+	center = true,
+	size = { 600, 400 },
+	max_size = { 900, 600 },
 })
 
 hl.window_rule({
 	name = "float-1password",
 	match = { class = "1password" },
 	float = true,
+	center = true,
+	size = { 600, 400 },
+	max_size = { 900, 600 },
 })
 
 hl.window_rule({
 	name = "float-steam",
 	match = { class = "^[Ss]team" },
 	float = true,
+	center = true,
 	workspace = "3",
 })
 
@@ -147,15 +156,15 @@ hl.env("XCURSOR_SIZE", "24")
 local mainMod = "SUPER"
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exit())
-hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + G", hl.dsp.window.float({ action = "toggle" }))
 --hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("command -v ghostty >/dev/null 2>&1 && exec ghostty || exec foot"))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("rofi -show drun"))
-hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("killall waybar; exec waybar "))
+hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("systemctl --user restart waybar"))
 
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd('grim -g "$(slurp)" ~/Pictures/screenshot-$(date +%F-%T).png'))
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("google-chrome-stable"))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("google-chrome-stable --new-window"))
 hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("wlogout"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(os.getenv("HOME") .. "/.config/hypr/scripts/wallpaper-cycle.sh"))

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkMenu" id="menu">
+    <child><object class="GtkMenuItem" id="toggle"><property name="label">Toggle Power</property></object></child>
+    <child><object class="GtkSeparatorMenuItem" id="sep-power"/></child>
+    <child><object class="GtkMenuItem" id="bri-1"><property name="label">Brightness 1%</property></object></child>
+    <child><object class="GtkMenuItem" id="bri-25"><property name="label">Brightness 25%</property></object></child>
+    <child><object class="GtkMenuItem" id="bri-50"><property name="label">Brightness 50%</property></object></child>
+    <child><object class="GtkMenuItem" id="bri-75"><property name="label">Brightness 75%</property></object></child>
+    <child><object class="GtkMenuItem" id="bri-100"><property name="label">Brightness 100%</property></object></child>
+    <child><object class="GtkMenuItem" id="bri-up"><property name="label">Brightness +10%</property></object></child>
+    <child><object class="GtkMenuItem" id="bri-down"><property name="label">Brightness -10%</property></object></child>
+    <child><object class="GtkSeparatorMenuItem" id="sep-temp"/></child>
+    <child><object class="GtkMenuItem" id="temp-2700"><property name="label">Temp 2700K</property></object></child>
+    <child><object class="GtkMenuItem" id="temp-3000"><property name="label">Temp 3000K</property></object></child>
+    <child><object class="GtkMenuItem" id="temp-4000"><property name="label">Temp 4000K</property></object></child>
+    <child><object class="GtkMenuItem" id="temp-5000"><property name="label">Temp 5000K</property></object></child>
+    <child><object class="GtkMenuItem" id="temp-6500"><property name="label">Temp 6500K</property></object></child>
+    <child><object class="GtkSeparatorMenuItem" id="sep-scene"/></child>
+    <child><object class="GtkMenuItem" id="scene-night"><property name="label">Scene night (1%, 2700K)</property></object></child>
+    <child><object class="GtkMenuItem" id="scene-work"><property name="label">Scene work (100%, 4000K)</property></object></child>
+    <child><object class="GtkMenuItem" id="scene-full"><property name="label">Scene full (100%, 6500K)</property></object></child>
+  </object>
+</interface>

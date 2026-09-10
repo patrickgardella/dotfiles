@@ -153,6 +153,25 @@ window#waybar {
     -gtk-icon-effect: dim;
 }
 
+#custom-kettle.kettle-heating {
+  color: #ff6b6b;
+}
+#custom-kettle.kettle-done {
+  color: #51cf66;
+}
+#custom-kettle.kettle-off {
+  color: #868e96;
+}
+
+#custom-gel-panel {
+    background-color: @background;
+    margin: 0 15px 0 0;
+    padding: 0 15px 0 15px;
+}
+#custom-gel-panel.on { color: #ffd866; }
+#custom-gel-panel.off { color: #6c7086; }
+#custom-gel-panel.unreachable { color: #f38ba8; }
+
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
     background-color: alpha(@color1, 0.25);

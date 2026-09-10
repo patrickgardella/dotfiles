@@ -5,6 +5,8 @@
     "hyprland/workspaces"
   ],
   "modules-center": [
+    "custom/kettle",
+    "custom/gel-panel",
     "clock",
     "custom/weather",
     "custom/pacman"
@@ -93,6 +95,24 @@
     "on-click": "checkupdates",
     "exec": "checkupdates | wc -l",
     "signal": 8
+  },
+  "custom/kettle": {
+    "exec": "~/.config/waybar/scripts/govee-kettle/govee-kettle status",
+    "return-type": "json",
+    "interval": 30,
+    "on-click": "~/.config/waybar/scripts/govee-kettle/govee-kettle toggle",
+    "on-click-right": "~/.config/waybar/scripts/govee-kettle/govee-kettle heat 200",
+    "tooltip": true
+  },
+  "custom/gel-panel": {
+    "exec": "/home/patrick/Documents/projects/tuya/.venv/bin/python /home/patrick/Documents/projects/tuya/waybar-panel.py status-json",
+    "return-type": "json",
+    "interval": 15,
+    "on-click": "/home/patrick/Documents/projects/tuya/.venv/bin/python /home/patrick/Documents/projects/tuya/waybar-panel.py toggle",
+    "on-click-right": "/home/patrick/Documents/projects/tuya/.venv/bin/python /home/patrick/Documents/projects/tuya/waybar-panel.py temp-next",
+    "on-scroll-up": "/home/patrick/Documents/projects/tuya/.venv/bin/python /home/patrick/Documents/projects/tuya/waybar-panel.py bright-up",
+    "on-scroll-down": "/home/patrick/Documents/projects/tuya/.venv/bin/python /home/patrick/Documents/projects/tuya/waybar-panel.py bright-down",
+    "tooltip": true
   },
   "custom/weather": {
     "exec": "~/.config/waybar/scripts/weather.sh",

@@ -1,0 +1,287 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Terminal & Desktop Cheat Sheet</title>
+<style>
+  @page {
+    size: letter portrait;
+    margin: 0.35in 0.4in;
+  }
+  *{box-sizing:border-box;}
+  html,body{
+    margin:0;
+    padding:0;
+    background:#fff;
+    color:#1a1a1a;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size:8pt;
+    line-height:1.25;
+  }
+  .mono{font-family:'Menlo','Consolas',monospace;}
+
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    border-bottom:1.5pt solid #1a1a1a;
+    padding-bottom:4pt;
+    margin-bottom:6pt;
+  }
+  header h1{
+    font-size:13pt;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  header .meta{
+    font-size:7pt;
+    color:#555;
+    text-align:right;
+  }
+  header .meta .mono{display:block;}
+
+  .cols{
+    display:flex;
+    gap:10pt;
+  }
+  .col{
+    flex:1;
+    min-width:0;
+  }
+
+  .col-title{
+    font-size:9pt;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    background:#1a1a1a;
+    color:#fff;
+    padding:2pt 5pt;
+    margin:0 0 4pt;
+  }
+
+  .group{margin-bottom:6pt;}
+  .group h2{
+    font-size:7.3pt;
+    text-transform:uppercase;
+    letter-spacing:.03em;
+    color:#666;
+    margin:0 0 2pt;
+    border-bottom:0.5pt solid #ccc;
+    padding-bottom:1pt;
+  }
+  .row{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:6pt;
+    padding:0.5pt 0;
+  }
+  .row .desc{color:#1a1a1a;}
+  .row .sub{color:#777;font-size:6.4pt;}
+  .row .keys{
+    flex-shrink:0;
+    white-space:nowrap;
+    font-family:'Menlo','Consolas',monospace;
+    font-size:7pt;
+    font-weight:600;
+  }
+  .row .keys kbd{
+    font-family:inherit;
+    border:0.5pt solid #999;
+    border-radius:2pt;
+    padding:0 2.5pt;
+    background:#f2f2f2;
+  }
+
+  .note{
+    font-size:6.6pt;
+    color:#444;
+    background:#f2f2f2;
+    border-left:2pt solid #1a1a1a;
+    padding:2pt 5pt;
+    margin-bottom:5pt;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Terminal &amp; Desktop Cheat Sheet</h1>
+  <div class="meta">
+    <span class="mono">~/projects/dotfiles</span>
+    <span>tmux.conf &middot; config/nvim &middot; config/hypr</span>
+  </div>
+</header>
+
+<div class="cols">
+
+  <div class="col">
+    <div class="col-title">tmux — prefix Ctrl+B</div>
+
+    <div class="group">
+      <h2>Sessions</h2>
+      <div class="row"><span class="desc">New session</span><span class="keys">tmux new</span></div>
+      <div class="row"><span class="desc">Detach</span><span class="keys">d</span></div>
+      <div class="row"><span class="desc">List sessions</span><span class="keys">s</span></div>
+      <div class="row"><span class="desc">Rename session</span><span class="keys">$</span></div>
+      <div class="row"><span class="desc">Reload config</span><span class="keys">r</span></div>
+    </div>
+
+    <div class="group">
+      <h2>tms (session manager)</h2>
+      <div class="row"><span class="desc">Open picker</span><span class="keys">C-o</span></div>
+      <div class="row"><span class="desc">Switch session</span><span class="keys">C-j</span></div>
+      <div class="row"><span class="desc">List windows</span><span class="keys">C-w</span></div>
+      <div class="row"><span class="desc">Refresh tms</span><span class="keys">C-r</span></div>
+    </div>
+
+    <div class="group">
+      <h2>Windows</h2>
+      <div class="row"><span class="desc">New window</span><span class="keys">c</span></div>
+      <div class="row"><span class="desc">Next / prev</span><span class="keys">n / p</span></div>
+      <div class="row"><span class="desc">Go to window #</span><span class="keys">0-9</span></div>
+      <div class="row"><span class="desc">Rename window</span><span class="keys">,</span></div>
+      <div class="row"><span class="desc">Close window</span><span class="keys">&amp;</span></div>
+    </div>
+
+    <div class="group">
+      <h2>Panes</h2>
+      <div class="row"><span class="desc">Split vertical</span><span class="keys">%</span></div>
+      <div class="row"><span class="desc">Split horizontal</span><span class="keys">&quot;</span></div>
+      <div class="row"><span class="desc">Move between panes</span><span class="keys">&larr;&darr;&uarr;&rarr;</span></div>
+      <div class="row"><span class="desc">Cycle panes</span><span class="keys">o</span></div>
+      <div class="row"><span class="desc">Zoom pane</span><span class="keys">z</span></div>
+      <div class="row"><span class="desc">Close pane</span><span class="keys">x</span></div>
+    </div>
+
+    <div class="group">
+      <h2>Copy mode (vi keys)</h2>
+      <div class="row"><span class="desc">Enter copy mode</span><span class="keys">[</span></div>
+      <div class="row"><span class="desc">Start selection</span><span class="keys">Space</span></div>
+      <div class="row"><span class="desc">Copy &amp; exit <span class="sub">&rarr; clipboard</span></span><span class="keys">Enter</span></div>
+      <div class="row"><span class="desc">Half-page up/down</span><span class="keys">C-u / C-d</span></div>
+      <div class="row"><span class="desc">Paste buffer</span><span class="keys">]</span></div>
+    </div>
+
+    <div class="group">
+      <h2>Mouse (no prefix)</h2>
+      <div class="row"><span class="desc">Select / resize pane</span><span class="keys">click/drag</span></div>
+      <div class="row"><span class="desc">Copy text</span><span class="keys">drag</span></div>
+      <div class="row"><span class="desc">Scroll into copy mode</span><span class="keys">C-wheel</span></div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="col-title">Neovim — leader Space</div>
+
+    <div class="group">
+      <h2>Find (Telescope)</h2>
+      <div class="row"><span class="desc">Find files</span><span class="keys">&lt;Sp&gt; f f</span></div>
+      <div class="row"><span class="desc">Live grep</span><span class="keys">&lt;Sp&gt; f g</span></div>
+      <div class="row"><span class="desc">Find buffers</span><span class="keys">&lt;Sp&gt; f b</span></div>
+      <div class="row"><span class="desc">Find keymaps</span><span class="keys">&lt;Sp&gt; f k</span></div>
+      <div class="row"><span class="desc">Help tags</span><span class="keys">&lt;Sp&gt; f h</span></div>
+      <div class="row"><span class="desc">Find TODOs</span><span class="keys">&lt;Sp&gt; f t</span></div>
+    </div>
+
+    <div class="group">
+      <h2>Files &amp; windows</h2>
+      <div class="row"><span class="desc">Toggle file tree</span><span class="keys">&lt;Sp&gt; t t</span></div>
+      <div class="row"><span class="desc">Focus file tree</span><span class="keys">&lt;Sp&gt; t f</span></div>
+      <div class="row"><span class="desc">Split v / h</span><span class="keys">&lt;Sp&gt; sv / sh</span></div>
+      <div class="row"><span class="desc">Move between splits</span><span class="keys">C-&larr;&darr;&uarr;&rarr;</span></div>
+      <div class="row"><span class="desc">Toggle word wrap</span><span class="keys">&lt;Sp&gt; w w</span></div>
+    </div>
+
+    <div class="group">
+      <h2>LSP</h2>
+      <div class="row"><span class="desc">Definition / declaration</span><span class="keys">gd / gD</span></div>
+      <div class="row"><span class="desc">References</span><span class="keys">gr</span></div>
+      <div class="row"><span class="desc">Implementation</span><span class="keys">gi</span></div>
+      <div class="row"><span class="desc">Hover docs</span><span class="keys">K</span></div>
+      <div class="row"><span class="desc">Rename symbol</span><span class="keys">&lt;Sp&gt; r n</span></div>
+      <div class="row"><span class="desc">Code action</span><span class="keys">&lt;Sp&gt; c a</span></div>
+    </div>
+
+    <div class="group">
+      <h2>Diagnostics &amp; TODOs</h2>
+      <div class="row"><span class="desc">Prev / next diagnostic</span><span class="keys">[d / ]d</span></div>
+      <div class="row"><span class="desc">Diagnostic float</span><span class="keys">&lt;Sp&gt; e</span></div>
+      <div class="row"><span class="desc">Prev / next TODO</span><span class="keys">[t / ]t</span></div>
+    </div>
+
+    <div class="group">
+      <h2>Git (Gitsigns)</h2>
+      <div class="row"><span class="desc">Prev / next hunk</span><span class="keys">[h / ]h</span></div>
+      <div class="row"><span class="desc">Stage / reset hunk</span><span class="keys">&lt;Sp&gt; hs / hr</span></div>
+      <div class="row"><span class="desc">Undo stage hunk</span><span class="keys">&lt;Sp&gt; h u</span></div>
+      <div class="row"><span class="desc">Preview hunk</span><span class="keys">&lt;Sp&gt; h p</span></div>
+      <div class="row"><span class="desc">Stage / reset buffer</span><span class="keys">&lt;Sp&gt; hS / hR</span></div>
+      <div class="row"><span class="desc">Blame line / toggle</span><span class="keys">&lt;Sp&gt; hb / hB</span></div>
+      <div class="row"><span class="desc">Diff this</span><span class="keys">&lt;Sp&gt; h d</span></div>
+    </div>
+
+    <div class="group">
+      <h2>AI (Claude Code / CodeCompanion)</h2>
+      <div class="row"><span class="desc">Toggle / focus Claude</span><span class="keys">&lt;Sp&gt; ac / af</span></div>
+      <div class="row"><span class="desc">Resume / continue</span><span class="keys">&lt;Sp&gt; ar / aC</span></div>
+      <div class="row"><span class="desc">Add buffer / send sel.</span><span class="keys">&lt;Sp&gt; ab / as</span></div>
+      <div class="row"><span class="desc">Accept / deny diff</span><span class="keys">&lt;Sp&gt; aa / ad</span></div>
+      <div class="row"><span class="desc">Toggle chat / inline</span><span class="keys">&lt;Sp&gt; cc / ci</span></div>
+      <div class="row"><span class="desc">Action picker</span><span class="keys">&lt;Sp&gt; c x</span></div>
+    </div>
+
+    <div class="group">
+      <h2>Misc</h2>
+      <div class="row"><span class="desc">Accept completion</span><span class="keys">Enter</span></div>
+      <div class="row"><span class="desc">Which-key help</span><span class="keys">&lt;Sp&gt; ?</span></div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="col-title">Hyprland — mod Super</div>
+
+    <div class="group">
+      <h2>Apps &amp; launcher</h2>
+      <div class="row"><span class="desc">Terminal <span class="sub">ghostty/foot</span></span><span class="keys">Super Enter</span></div>
+      <div class="row"><span class="desc">Launcher <span class="sub">rofi</span></span><span class="keys">Super R</span></div>
+      <div class="row"><span class="desc">File manager</span><span class="keys">Super E</span></div>
+      <div class="row"><span class="desc">Browser <span class="sub">new window</span></span><span class="keys">Super B</span></div>
+      <div class="row"><span class="desc">Power menu</span><span class="keys">Super Esc</span></div>
+      <div class="row"><span class="desc">Lock screen</span><span class="keys">Super L</span></div>
+    </div>
+
+    <div class="group">
+      <h2>Windows</h2>
+      <div class="row"><span class="desc">Close window</span><span class="keys">Super Q</span></div>
+      <div class="row"><span class="desc">Toggle floating</span><span class="keys">Super G</span></div>
+      <div class="row"><span class="desc">Toggle split dir.</span><span class="keys">Super J</span></div>
+      <div class="row"><span class="desc">Move window</span><span class="keys">Super &larr;&darr;&uarr;&rarr;</span></div>
+      <div class="row"><span class="desc">Focus window</span><span class="keys">Alt &larr;&darr;&uarr;&rarr;</span></div>
+      <div class="row"><span class="desc">Drag / resize</span><span class="keys">Super LMB/RMB</span></div>
+      <div class="row"><span class="desc">Toggle scratchpad</span><span class="keys">Super `</span></div>
+    </div>
+
+    <div class="group">
+      <h2>Workspaces</h2>
+      <div class="row"><span class="desc">Go to workspace</span><span class="keys">Super 1-9</span></div>
+      <div class="row"><span class="desc">Move window to ws</span><span class="keys">Super+Shift 1-9</span></div>
+    </div>
+
+    <div class="group">
+      <h2>System &amp; media</h2>
+      <div class="row"><span class="desc">Screenshot region</span><span class="keys">Super S</span></div>
+      <div class="row"><span class="desc">Restart waybar</span><span class="keys">Super+Shift R</span></div>
+      <div class="row"><span class="desc">Cycle wallpaper</span><span class="keys">Super W</span></div>
+      <div class="row"><span class="desc">Brightness up/down</span><span class="keys">Super F5/F6</span></div>
+      <div class="row"><span class="desc">Brightness keys</span><span class="keys">Fn Bright+/-</span></div>
+    </div>
+
+    <div class="note">This is a static snapshot — regenerate from the dotfiles source if bindings change.</div>
+  </div>
+
+</div>
+
+</body>
+</html>

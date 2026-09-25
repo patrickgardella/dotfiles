@@ -153,6 +153,11 @@ window#waybar {
     -gtk-icon-effect: dim;
 }
 
+#custom-kettle {
+    background-color: @background;
+    margin: 0 15px 0 0;
+    padding: 0 15px 0 15px;
+}
 #custom-kettle.kettle-heating {
   color: #ff6b6b;
 }

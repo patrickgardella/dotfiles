@@ -26,6 +26,9 @@ vim.opt.termguicolors = true -- To enable 24-bit RGB color in the terminal
 vim.opt.colorcolumn = "80"   -- To highlight the 80th column
 vim.opt.signcolumn = "yes"   -- Add a column for signs (like git changes) or breakpoints
 
+--Spelling
+vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
+
 -- Behaviour
 vim.opt.splitright = true                           -- To open vertical splits to the right
 vim.opt.splitbelow = true                           -- To open horizontal splits below the current window
@@ -36,7 +39,7 @@ vim.opt.undofile = true                             -- To enable persistent undo
 vim.opt.undodir = vim.fn.stdpath("data") .. "/undo" -- To set the directory for undo files
 local undodir = vim.fn.stdpath("data") .. "/undo"
 if vim.fn.isdirectory(undodir) == 0 then
-  vim.fn.mkdir(undodir, "p")
+	vim.fn.mkdir(undodir, "p")
 end
 vim.opt.backspace = "indent,eol,start" -- To allow backspacing over everything in insert mode
 vim.opt.mouse:append("a")              -- To enable mouse support in all modes

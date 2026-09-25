@@ -71,3 +71,7 @@ config/nvim/lazy-lock.json
 # hypr files
 config/waybar/scripts/weather.env
 config/waybar/waybar-colors.css
+
+# Vale files
+*.spl
+*.sug

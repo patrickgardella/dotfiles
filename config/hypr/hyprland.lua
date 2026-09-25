@@ -17,6 +17,8 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("/usr/lib/hyprpolkitagent/hyprpolkitagent")
 	hl.exec_cmd(os.getenv("HOME") .. "/.config/hypr/scripts/wallpaper-cycle.sh")
 	hl.exec_cmd("mako")
+	hl.exec_cmd("flatpak run com.core447.StreamController -b")
+	hl.exec_cmd("/opt/1Password/1password --silent")
 	os.execute("gnome-keyring-daemon --start --components=secrets &")
 end)
 
@@ -114,8 +116,8 @@ hl.window_rule({
 	match = { class = "pcmanfm-qt" },
 	float = true,
 	center = true,
-	size = { 600, 400 },
-	max_size = { 900, 600 },
+	size = { 600, 800 },
+	max_size = { 900, 800 },
 })
 
 hl.window_rule({
@@ -123,8 +125,8 @@ hl.window_rule({
 	match = { class = "1password" },
 	float = true,
 	center = true,
-	size = { 600, 400 },
-	max_size = { 900, 600 },
+	size = { 600, 800 },
+	max_size = { 900, 800 },
 })
 
 hl.window_rule({

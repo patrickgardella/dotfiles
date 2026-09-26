@@ -63,6 +63,7 @@
     ~/.config/gtk-4.0: config/gtk-4.0
     ~/.config/wlogout: config/wlogout
     ~/.config/wallust: config/wallust
+    ~/.config/yazi: config/yazi
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

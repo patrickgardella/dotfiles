@@ -24,6 +24,9 @@ vim.diagnostic.config({
 	},
 })
 
+-- KML is XML; map it so lemminx attaches
+vim.filetype.add({ extension = { kml = "xml" } })
+
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 	pattern = "*.hcl",
 	callback = function()

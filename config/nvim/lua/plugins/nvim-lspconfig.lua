@@ -15,7 +15,7 @@ return {
 
     -- This ensures the Bridge is ready
     require("mason-lspconfig").setup({
-      ensure_installed = { "jsonls", "lua_ls" },
+      ensure_installed = { "jsonls", "lua_ls", "lemminx" },
     })
 
     -- rust-analyzer is installed via cargo, not mason, so enable it explicitly

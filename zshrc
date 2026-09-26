@@ -104,6 +104,17 @@ fi
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 
+# Yazi cd-on-exit wrapper (y)
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -- cwd < "$tmp"
+	rm -f -- "$tmp"
+	if [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+}
+
 # Machine-specific settings
 if [ -f "$HOME/.zshrc.local" ]; then
   source "$HOME/.zshrc.local"

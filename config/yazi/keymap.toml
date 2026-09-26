@@ -1,0 +1,9 @@
+#:schema https://yazi-rs.github.io/schemas/keymap.json
+
+# Stock keymap. Add overrides under [mgr] prepend_keymap.
+# Yazi defaults are vim-like. See: https://yazi-rs.github.io/docs/configuration/keymap
+
+[mgr]
+prepend_keymap = [
+  { on = ["g", "e"], run = "open --hovered", desc = "Open hovered file" },
+]

@@ -149,6 +149,17 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Yazi cd-on-exit wrapper (y)
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -- cwd < "$tmp"
+	rm -f -- "$tmp"
+	if [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+}
+
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/patrick.gardella/.lmstudio/bin"
 # End of LM Studio CLI section

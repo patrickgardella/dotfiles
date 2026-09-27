@@ -19,7 +19,8 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("mako")
 	hl.exec_cmd("flatpak run com.core447.StreamController -b")
 	hl.exec_cmd("/opt/1Password/1password --silent")
-	os.execute("gnome-keyring-daemon --start --components=secrets &")
+	hl.exec_cmd("gnome-keyring-daemon --start --components=secrets &")
+	hl.exec_cmd("udiskie --automount --notify --tray &")
 end)
 
 -- Input

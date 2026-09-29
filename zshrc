@@ -115,6 +115,13 @@ function y() {
 	fi
 }
 
+# rapidly find the name of an installed application
+pkgs() {
+  fzf < ~/.local/share/pkglist.txt \
+    --preview 'case {1} in repo|aur) pacman -Qi {2};; flatpak) flatpak info {2};; *) echo {};; esac' \
+    --preview-window down:50%
+}
+
 # Machine-specific settings
 if [ -f "$HOME/.zshrc.local" ]; then
   source "$HOME/.zshrc.local"

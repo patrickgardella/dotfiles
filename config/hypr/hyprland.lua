@@ -1,7 +1,8 @@
 -- Monitor
 hl.monitor({
-	output = "",
-	mode = "preferred",
+	output = "DP-1",
+	mode = "3440x1440@144",
+	--mode = "preferred",
 	position = "auto",
 	scale = 1,
 })
@@ -19,8 +20,8 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("mako")
 	hl.exec_cmd("flatpak run com.core447.StreamController -b")
 	hl.exec_cmd("/opt/1Password/1password --silent")
-	hl.exec_cmd("gnome-keyring-daemon --start --components=secrets &")
-	hl.exec_cmd("udiskie --automount --notify --tray &")
+	hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
+	hl.exec_cmd("udiskie --automount --notify --tray")
 end)
 
 -- Input

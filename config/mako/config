@@ -22,3 +22,10 @@ border_color=#33ccff
 [urgency=high]
 border_color=#ff4444
 default_timeout=10000
+
+default-timeout=60000
+ignore-timeout=1
+max-visible=5
+
+# Collapse repeats of the same notification into one with a count
+group-by=app-name,summary

@@ -17,8 +17,15 @@ with automatic DNS ignored so only these servers are used.
 > **Tailscale note:** On machines running Tailscale with "Use Tailscale DNS"
 > enabled, `/etc/resolv.conf` points at `100.100.100.100` (MagicDNS), and
 > Tailscale forwards queries to the tailnet's configured resolver. To use the
-> Pi-holes directly on such a machine, either add them as a nameserver in the
-> Tailscale admin console (DNS settings) or run `tailscale set --accept-dns=false`.
+> Pi-holes directly on such a machine, run `tailscale set --accept-dns=false`
+> (or add them as a nameserver in the Tailscale admin console).
+>
+> **glibc limit:** The libc resolver only uses the first 3 `nameserver` lines
+> in `/etc/resolv.conf`, so on Linux the 4th server (secondary IPv6) is ignored
+> by most applications even though it is configured.
+
+Verified 2026-10-21 from the Linux machine: all four servers answer A and AAAA
+queries, and `/etc/resolv.conf` lists them (written by NetworkManager).
 
 ---
 

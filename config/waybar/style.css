@@ -49,6 +49,7 @@ window#waybar {
 }
 
 #battery,
+#power-profiles-daemon,
 #cpu,
 #memory,
 #pulseaudio,
@@ -182,3 +183,7 @@ window#waybar {
     background-color: alpha(@color1, 0.25);
     border-radius: 6px;
 }
+
+#power-profiles-daemon.performance { color: @color2; }
+#power-profiles-daemon.balanced { color: @color3; }
+#power-profiles-daemon.power-saver { color: @color1; }

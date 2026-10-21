@@ -16,6 +16,7 @@
     "memory",
     "group/temps",
     "pulseaudio",
+    "power-profiles-daemon",
     "battery",
     "network",
     "tray"
@@ -137,6 +138,17 @@
     "exec": "~/.config/waybar/scripts/weather.sh",
     "interval": 600,
     "return-type": "json"
+  },
+  "power-profiles-daemon": {
+    "format": "{icon} {profile}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "󰾅",
+      "performance": "󰓅",
+      "balanced": "󰾅",
+      "power-saver": "󰌪"
+    }
   },
   "battery": {
     "states": {

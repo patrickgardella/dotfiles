@@ -35,6 +35,11 @@ fi
 
 alias brewup='brew update; brew upgrade; brew upgrade --cask; brew cleanup'
 
+# Show user@host in the terminal tab title, only when logged in over SSH
+if [[ -n $SSH_CONNECTION ]]; then
+  precmd() { print -Pn '\e]2;%n@%m: %~\a' }
+fi
+
 # Set window title
 function set_win_title(){
     echo -ne "\033]0; $(basename "$HOST") \007"

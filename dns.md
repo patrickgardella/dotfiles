@@ -11,8 +11,8 @@ All clients should use the two Pi-hole servers as their DNS resolvers.
 
 Search domain: `thetelos.com`
 
-Source: the "Wired connection" profile on this Linux machine (NetworkManager),
-with automatic DNS ignored so only these servers are used.
+Configure each client to use only these servers (ignore DHCP-provided DNS),
+using the section for your platform below.
 
 > **Tailscale note:** On machines running Tailscale with "Use Tailscale DNS"
 > enabled, `/etc/resolv.conf` points at `100.100.100.100` (MagicDNS), and
@@ -22,10 +22,9 @@ with automatic DNS ignored so only these servers are used.
 >
 > **glibc limit:** The libc resolver only uses the first 3 `nameserver` lines
 > in `/etc/resolv.conf`, so on Linux the 4th server (secondary IPv6) is ignored
-> by most applications even though it is configured.
-
-Verified 2026-10-21 from the Linux machine: all four servers answer A and AAAA
-queries, and `/etc/resolv.conf` lists them (written by NetworkManager).
+> by most applications even though it is configured. List the servers in the
+> order primary IPv4, secondary IPv4, primary IPv6, secondary IPv6 so the
+> important ones fall within the limit.
 
 ---
 
@@ -67,8 +66,12 @@ To revert to DHCP-provided DNS: `sudo networksetup -setdnsservers "Wi-Fi" Empty`
 
 ## Linux
 
+First find out what manages DNS: `ls -l /etc/resolv.conf`, or check which of
+NetworkManager, systemd-resolved or dhcpcd is running. Then use the matching
+section below.
+
 ### NetworkManager (nmcli)
-This is how this machine is configured. Replace `"Wired connection"` with your
+Replace `"Wired connection"` with your
 profile name (`nmcli con show`).
 
 ```sh
@@ -80,6 +83,18 @@ nmcli con mod "Wired connection" \
   ipv6.dns "fdd9:6250:9437:1:12ff:e0ff:fec3:ba65,fdd9:6250:9437:1:daee:cff9:5e83:6ac5"
 nmcli con up "Wired connection"
 ```
+
+### dhcpcd (e.g. Debian without NetworkManager)
+In `/etc/dhcpcd.conf`, set (replacing any existing `static domain_name_servers`):
+
+```
+static domain_name_servers=192.168.4.53 192.168.4.153 fdd9:6250:9437:1:12ff:e0ff:fec3:ba65 fdd9:6250:9437:1:daee:cff9:5e83:6ac5
+static domain_search=thetelos.com
+```
+
+Then rebind: `sudo dhcpcd -n <interface>` (or `sudo systemctl restart dhcpcd`).
+dhcpcd regenerates `/etc/resolv.conf`; the router's IPv6 address may still be
+appended after the Pi-holes, which is harmless.
 
 ### systemd-resolved (without NetworkManager)
 Edit `/etc/systemd/resolved.conf`:
@@ -103,7 +118,8 @@ nameserver fdd9:6250:9437:1:daee:cff9:5e83:6ac5
 search thetelos.com
 ```
 
-Verify: `resolvectl status` (or `nmcli dev show | grep DNS`) and `dig example.com`.
+Verify: `cat /etc/resolv.conf`, `resolvectl status` or `nmcli dev show | grep DNS`,
+and `dig example.com` (the `SERVER:` line should show a Pi-hole).
 
 ---
 

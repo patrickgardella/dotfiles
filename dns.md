@@ -9,6 +9,13 @@ All clients should use the two Pi-hole servers as their DNS resolvers.
 | Primary   | `192.168.4.53`  | `fdd9:6250:9437:1:12ff:e0ff:fec3:ba65`    |
 | Secondary | `192.168.4.153` | `fdd9:6250:9437:1:daee:cff9:5e83:6ac5`    |
 
+Use only these ULA (`fdd9:`) addresses for IPv6. The `2600:` global addresses
+on both hosts are temporary and rotate, and the primary also carries a
+`fdd9:...:aa30:64a3:315a:c1ca` address that is not the one to use. The primary's
+address is EUI-64 (derived from its MAC); the secondary's is a stable-privacy
+SLAAC address, which stays fixed unless the Pi's dhcpcd secret
+(`/var/lib/dhcpcd/secret`) or the network prefix changes.
+
 Search domain: `thetelos.com`
 
 Configure each client to use only these servers (ignore DHCP-provided DNS),

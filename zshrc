@@ -127,6 +127,17 @@ pkgs() {
     --preview-window down:50%
 }
 
+# Auto-detect Hyprland instance in SSH sessions
+if [ -n "$SSH_CONNECTION" ]; then
+    export XDG_RUNTIME_DIR="/run/user/$(id -u)"
+    if [ -d "$XDG_RUNTIME_DIR/hypr" ]; then
+        export HYPRLAND_INSTANCE_SIGNATURE=$(ls -t "$XDG_RUNTIME_DIR/hypr" | head -n 1 2>/dev/null)
+    fi
+    if [ -d "$XDG_RUNTIME_DIR" ]; then
+        export WAYLAND_DISPLAY=$(ls -t "$XDG_RUNTIME_DIR" | grep '^wayland-' | head -n 1 2>/dev/null)
+    fi
+fi
+
 # Machine-specific settings
 if [ -f "$HOME/.zshrc.local" ]; then
   source "$HOME/.zshrc.local"

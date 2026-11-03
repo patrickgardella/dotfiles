@@ -7,6 +7,22 @@ hl.monitor({
 	scale = 1,
 })
 
+-- Dummy Monitor
+hl.monitor({
+	output = "HDMI-A-1",
+	mode = "1440x900@60",
+	position = "10000x0",
+	scale = 1,
+})
+
+-- Pin the workspace to the right monitor
+hl.workspace_rule({ workspace = "10", monitor = "HDMI-A-1", default = true, persistent = true })
+hl.workspace_rule({ workspace = "1", monitor = "DP-1", default = true })
+hl.workspace_rule({ workspace = "2", monitor = "DP-1", default = true })
+hl.workspace_rule({ workspace = "3", monitor = "DP-1", default = true })
+hl.workspace_rule({ workspace = "4", monitor = "DP-1", default = true })
+hl.workspace_rule({ workspace = "5", monitor = "DP-1", default = true })
+
 -- Autostart
 hl.on("hyprland.start", function()
 	-- hl.exec_cmd("waybar")
@@ -22,6 +38,9 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("/opt/1Password/1password --silent")
 	hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
 	hl.exec_cmd("udiskie --automount --notify --tray")
+	-- Start with focus on the physical monitor, not the dummy HDMI one
+	-- (otherwise launched windows open on a screen nobody can see).
+	hl.exec_cmd([[hyprctl dispatch 'hl.dsp.focus({ monitor = "DP-1" })']])
 end)
 
 -- Input
@@ -136,13 +155,11 @@ hl.window_rule({
 	match = { class = "^[Ss]team" },
 	float = true,
 	center = true,
-	workspace = "3",
 })
 
 hl.window_rule({
 	name = "vmware-workspace",
 	match = { class = "^[Vv]mware" },
-	workspace = "2",
 })
 
 hl.window_rule({
@@ -158,22 +175,21 @@ hl.env("XCURSOR_SIZE", "24")
 
 -- Keybinds
 local mainMod = "SUPER"
-hl.bind(mainMod .. " + Q", hl.dsp.window.close())
-hl.bind(mainMod .. " + M", hl.dsp.exit())
-hl.bind(mainMod .. " + G", hl.dsp.window.float({ action = "toggle" }))
---hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
-hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
-hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("command -v ghostty >/dev/null 2>&1 && exec ghostty || exec foot"))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("rofi -show drun"))
-hl.bind(mainMod .. " + H", hl.dsp.exec_cmd("hyprlauncher"))
-hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("systemctl --user restart waybar"))
-
-hl.bind(mainMod .. " + S", hl.dsp.exec_cmd('grim -g "$(slurp)" ~/Pictures/screenshot-$(date +%F-%T).png'))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("google-chrome-stable --new-window"))
-hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("wlogout"))
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
-hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(os.getenv("HOME") .. "/.config/hypr/scripts/wallpaper-cycle.sh"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("pcmanfm-qt"))
+--hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
+hl.bind(mainMod .. " + G", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + H", hl.dsp.exec_cmd("hyprlauncher"))
+hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + M", hl.dsp.exit())
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("rofi -show drun"))
+hl.bind(mainMod .. " + S", hl.dsp.exec_cmd('grim -g "$(slurp)" ~/Pictures/screenshot-$(date +%F-%T).png'))
+hl.bind(mainMod .. " + Q", hl.dsp.window.close())
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(os.getenv("HOME") .. "/.config/hypr/scripts/wallpaper-cycle.sh"))
+hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("systemctl --user restart waybar"))
+hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("wlogout"))
+hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("command -v ghostty >/dev/null 2>&1 && exec ghostty || exec foot"))
 
 -- Brightness
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set +5%"))
@@ -186,6 +202,14 @@ for i = 1, 9 do
 	hl.bind(mainMod .. " + " .. i, hl.dsp.focus({ workspace = i }))
 	hl.bind(mainMod .. " + SHIFT + " .. i, hl.dsp.window.move({ workspace = i }))
 end
+
+-- Workspace switching for dummy monitor
+hl.bind(mainMod .. " + ALT + " .. 0, hl.dsp.focus({ workspace = 10 }))
+hl.bind(mainMod .. " + ALT + " .. 1, hl.dsp.focus({ workspace = 11 }))
+hl.bind(mainMod .. " + ALT + " .. 2, hl.dsp.focus({ workspace = 12 }))
+hl.bind(mainMod .. " + ALT + SHIFT + " .. 0, hl.dsp.window.move({ workspace = 10 }))
+hl.bind(mainMod .. " + ALT + SHIFT + " .. 1, hl.dsp.window.move({ workspace = 11 }))
+hl.bind(mainMod .. " + ALT + SHIFT + " .. 2, hl.dsp.window.move({ workspace = 12 }))
 
 hl.bind(mainMod .. " + LEFT", hl.dsp.window.move({ direction = "l" }))
 hl.bind(mainMod .. " + RIGHT", hl.dsp.window.move({ direction = "r" }))

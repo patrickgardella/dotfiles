@@ -41,6 +41,7 @@ hl.on("hyprland.start", function()
 	-- Start with focus on the physical monitor, not the dummy HDMI one
 	-- (otherwise launched windows open on a screen nobody can see).
 	hl.exec_cmd([[hyprctl dispatch 'hl.dsp.focus({ monitor = "DP-1" })']])
+	hl.exec_cmd("sunshine")
 end)
 
 -- Input

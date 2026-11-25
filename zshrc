@@ -61,6 +61,7 @@ if (( $+commands[tms] )); then
     source <(COMPLETE=zsh tms)
 fi
 
+alias typora="open -a typora"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/Downloads/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/Downloads/google-cloud-sdk/path.zsh.inc"; fi
